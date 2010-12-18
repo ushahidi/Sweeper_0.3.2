@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration name="MySQL API Key Data Context Configuration">
+    <properties>
+        <property name="DataBaseUrl" displayName="The Url of your data base (including port)" type="string" value="localhost"/>
+        <property name="UserName" displayName="The user name for the data base" type="string" value="sweeper_nightly"/>
+        <property name="Password" displayName="The password for the data base" type="string" value="sweeper_nightly"/>
+        <property name="Database" displayName="The database to use" type="string" value="sweeper_nightly"/>
+    </properties>
+</configuration>

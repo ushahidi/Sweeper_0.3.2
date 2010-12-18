@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<configuration><modules><module name="Ushahidi Report Push"><properties><property name="Ushahidi Url" type="string" description="The fully qualified url to the Ushahidi instance you want to communicate with (please dont include the API path, just the root)" value="http://someurl.com"/></properties></module>
+<module name="SiCDS">
+    <properties>
+        <property name="Service Url" type="string" description="The Url of the cloud or locally hosted instsnce of the SiCDS service" value="http://209.160.27.80:8625"/>
+        <property name="API Key" type="string" description="The api key you will need to communicate with the SiCDS service" value="swiftriver_dev"/>
+    </properties>
+</module>
+</modules>
+</configuration>

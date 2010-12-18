@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration name="Data Abstraction Layer Configuration">
+    <properties>
+        <property 
+         name="DataContextType"
+         displayName="Enter the fully qualifed type of the API key data content - rememebr the namespace starting with '\'"
+         type="string"
+         value="\Swiftriver\Core\Modules\DataContext\MySql_V2\DataContext"
+        />
+        <property
+         name="DataContextPath"
+         displayName="Enter the fully path relative to the modules directory where the APIKey Data Content Files are contained"
+         type="string"
+         value="/DataContext/MySql_V2/"
+        />
+    </properties>
+</configuration>

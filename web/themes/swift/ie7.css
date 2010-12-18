@@ -1,0 +1,28 @@
+#nav-container {
+	float: left !important;
+	height: 75px !important;
+	width: 848px !important;
+}
+
+#veracity-slider {
+	display: none !important;
+}
+
+#nav-container #veracity-slider {
+	display: block !important;
+	background: red !important;
+	width: 200px !important;
+	height: 75px !important; 
+}
+
+#facet-groups {
+	float: right !important;
+}
+
+#toggle-badges {
+	position: absolute !important;
+	left: auto !important;
+	right: 300px !important;
+	top: 5px !important;
+	width: 200px !important;
+}

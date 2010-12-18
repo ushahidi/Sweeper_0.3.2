@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration name="Core Configuration">
+    <properties>
+        <property 
+         name="ModulesDirectory"
+         displayName="Enter the path to the modules directory relative to the base directory of the Core"
+         type="string"
+         value="/Modules"
+        />
+        <property
+         name="CachingDirectory"
+         displayName="Enter the path to the cache directory relative to the base directory of the Core"
+         type="string"
+         value="/Cache"
+        />
+        <property
+         name="BaseLanguageCode"
+         displayName="Enter the two letter ISO 639-1 language code used as the base reference for all other languages"
+         type="string"
+         value="en"
+        />
+        <property
+         name="EnableDebugLogging"
+         displayName="Set this to true if you want to enable debug level logging. Note that this can cause the log file to get BIG!"
+         type="bool"
+         value="true"
+        />
+    </properties>
+</configuration>

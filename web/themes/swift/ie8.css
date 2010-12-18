@@ -1,0 +1,17 @@
+#sb-nav-close {
+	background: url('media/images/ie_close.png') -124px -199px no-repeat !important;
+}
+
+.modal-content button:active {
+	background: url('media/images/buttons.png') 1px -399px no-repeat !important;
+}
+
+.modal-content button.cancel:active {
+	background: url('media/images/buttons.png') 1px -575px no-repeat !important;
+}
+
+.modal-content button:active span {
+	position: relative !important;
+	top: -1px !important;
+	left: -1px !important;
+}

@@ -1,0 +1,44 @@
+div, p, h1, h2, h3, h4, h5, table, tr, td, img { margin:0; padding:0; }
+div, p, h1, h2, h3, h4, h5, td { font-family:Century Gothic, sans-serif; }
+
+
+img { border:none; }
+
+body { background: #222222; font-size: 80%; }
+body div#page { width:600px; margin-right: auto; margin-left: auto; padding-top: 50px; }
+body div#page a, td a { text-decoration: none; color: #000; }
+body div#page a:hover { text-decoration: underline; }
+
+body div#head table#steps { width:70%; margin-right: auto; margin-left: auto; border-left:1px solid #AAA; border-right:1px solid #AAA; }
+body div#head table#steps td { font-family:Calibri; font-size:1.1em; text-align:center; border-left:1px solid #AAA; border-right:1px solid #AAA; }
+body div#head table#steps td.selected a { color:#FFF; }
+body div#head table#steps td a { padding-left:5px; padding-right:5px; color:#AAA; }
+body div#head table#steps td a:hover { color:#FFF; }
+
+div#baloon { width: 390px; position:relative; top:-150px; left:110px;}
+
+div#baloon div.top { background: url('../images/baloon-top.png') no-repeat; height:28px; }
+div#baloon div.mid { background: url('../images/baloon-mid.png') repeat-y; padding:10px; }
+div#baloon div.mid h2 { width:100%; text-align:center; font-family:Calibri; font-size:3em; margin-bottom:15px; color:#333; }
+div#baloon div.mid p { text-align:justify; }
+div#baloon div.mid p.description { width:80%; margin-left:auto; margin-right:auto; font-family:Calibri; font-size:1.5em; margin-bottom:15px; }
+div#baloon div.mid div.step-render ul li { list-style:none; }
+div#baloon div.mid div.step-render ul li.pass { background: url('../images/sucess-small.png') no-repeat;}
+div#baloon div.mid div.step-render ul li.fail { background: url('../images/fail-small.png') no-repeat;}
+div#baloon div.mid div.step-render ul li p.name { font-family:Calibri; font-size:1.5em; padding-top:5px; margin-bottom:5px; margin-left:50px; }
+div#baloon div.mid div.step-render ul li p.result { margin-left:50px; margin-bottom:15px; margin-right:30px; }
+
+
+div#baloon div.mid form { width:80%; margin-right:auto; margin-left:auto; }
+div#baloon div.mid form div.form-row { margin-bottom:5px; }
+div#baloon div.mid form div.form-row label { width:100%; font-family:Calibri; font-size:1.1em; }
+div#baloon div.mid form div.form-row input { width:100%; font-family:Calibri; font-size:1.5em; }
+div#baloon div.mid form div.form-action input { width:100%; padding:5px; margin-top:10px; }
+
+div#baloon div.mid div.alert { width:80%; margin-right:auto; margin-left:auto; margin-top:10px; margin-bottom: 10px;  background-color:#C90; border:2px solid #600; }
+div#baloon div.mid div.alert ul li { margin-bottom:10px; padding-left:-10px;}
+
+div#baloon div.mid div.message { width:80%; margin-right:auto; margin-left:auto; margin-top:10px; margin-bottom: 10px; }
+div#baloon div.mid div.message p { margin-bottom:10px; }
+
+div#baloon div.bottom { background: url('../images/baloon-bottom.png') no-repeat; height:28px; }

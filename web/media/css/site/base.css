@@ -1,0 +1,235 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+input, select, textarea {
+font-size:100%;
+font-weight:normal;
+font-family: inherit;
+}
+
+/*
+=============================
+float clearing
+*/
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {display: inline-block;}
+
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+
+/*
+=============================
+skip links and hidden content
+*/
+.skip {text-align:left;}
+
+.hidden, .access
+{
+position:absolute;
+left:0px;
+top:-500px;
+width:1px;
+height:1px;
+overflow:hidden;
+}
+
+.skip {position:absolute; left:-9000px; top:0}
+
+.skip a:focus,
+.skip a:active {
+  position:absolute;
+  left:9000px;
+  width: 940px;
+  padding: 10px;
+  top:0;
+  z-index: 100;
+  text-decoration: underline;
+}
+
+.lightbox_bg {
+    background:#ffffff none repeat scroll 0 0;
+    display:none;
+    height:800px;
+    left:0;
+    filter:alpha(opacity=50);
+    opacity: 0.5;
+    top:0;
+    width:100%;
+    z-index:50;
+    display:none;
+    position:fixed;
+}
+
+
+/* SITE BASE LAYOUT */
+/* FONTS */
+body { font-family:Arial, sans-serif; }
+body div#page div#header div#tag-line h1 { font: 0.7em/1.2em "Lucida Grande", Lucida, Verdana, sans-serif; background-image: url(images/bg_gr.png); border: 1px solid #0f1a2d; padding: 15px; }
+body div#page div#header div#configuration a { text-decoration: none; font: bold .6em "Lucida Grande", Lucida, Verdana, sans-serif; }
+body div#page div#header div#configuration a:hover { text-decoration: underline; }
+
+body div#page div#body div#menu div#list-option ul li a { text-decoration: none; font: 0.75em "Helvetica Neue", Arial; }
+body div#page div#body div#content div#content-list ul li div.content-item {font-size:75%; }
+body div#page div#body div#content div#content-list ul li div.content-item div.left-column div.veracity { text-align:center; }
+body div#page div#body div#content div#content-list ul li div.content-item div.left-column div.veracity p { font-size: 80%; font-weight:bold; }
+
+body div#page div#body div#content div#content-list ul li div.content-item div.right-column div.languages div.language p.title { font-weight:bold; font-size:1.2em; }
+body div#page div#body div#content div#content-list ul li div.content-item div.right-column div.languages div.language p { font-family: Helvetica; font-size: 0.96em; line-height: 1.4em; }
+body div#page div#body div#content div#content-list ul li div.content-item div.right-column div.tags div.tag-group p { font-size: 0.95em;}
+
+body div#page div#body div#content div#content-list ul li div.content-item div.right-column div.meta { font-size:90%; }
+body div#page div#body div#content div#content-list ul li div.content-item div.right-column div.tags div.tag-group p.tag-type { font-weight:bold; }
+
+body div#page div#body div#right-bar div#nav-container div.nav-container h4 { font-size:80%; }
+body div#page div#body div#right-bar div#nav-container div#veracity-slider div#label-container p { font-size:80%; }
+body div#page div#body div#right-bar div#nav-container div.nav-container div.nav-inner ul.facets li a { font-size:80%; text-decoration:none; }
+
+div#themes ul#theme-list .theme { font-size: 80%;}
+div.modal div.modal-content div#turbines ul#turbine-list li { font-size: 80%; }
+div.modal div.modal-content div#turbines ul#turbine-list li p.name, p.active { font-weight: bold; }
+div.modal div.modal-content div#turbines ul#turbine-list li p a { text-decoration: none;}
+div.modal div.modal-content div#turbines ul#turbine-list li p a:hover { text-decoration: underline;}
+div.modal div.modal-content div#turbines ul#turbine-list li div.config-container div.config-property-container p.name { font-size:80%;}
+
+div.modal div.modal-content div#sources h3 a { text-decoration:none;}
+
+
+
+body div#page div#body div#right-bar { text-align:left !important; }
+
+div#footer { background-color: #1674a7; }
+div#footer p { color: #ffffff; font-size: 0.7em; }
+div#footer a { color: #ffffff; text-decoration: none; }
+div#footer a:hover { color: #ffffff; text-decoration: underline; }
+div#footer li a { color: #ffffff; text-decoration: none; }
+div#footer li a:hover { color: #ffffff; text-decoration: underline; }
+
+div#sb-body div.html h2 { text-align: center; }
+
+/* LAYOUT */
+body div#page { width:960px; margin-left:auto; margin-right:auto; margin-bottom:50px; }
+body div#page div#header { height:125px; margin-top:30px; }
+body div#page div#header div#logo img { float:left; }
+body div#page div#header div#tag-line { margin-top:10px; float:right; width:50%; }
+body div#page div#header div#configuration { height: 20px; position: absolute; top:0; left:0; width:100%; margin-bottom:0px; padding:5px 0 0 0; border-bottom:1px solid #1A1A1A;}
+body div#page div#header div#configuration div#admin-menu { width:960px; margin-left:auto; margin-right:auto;  }
+body div#page div#header div#configuration div#admin-menu ul li { float:right; padding:0 10px 0 10px; }
+
+body div#page div#body div#menu div#list-option ul li a { float:left; padding:10px; margin-right:5px; list-style: none; }
+
+body div#page div#body div#content { width:650px; float:left; }
+body div#page div#body div#content div#content-list { padding-left:10px; margin-bottom: 25px;}
+body div#page div#body div#content div#content-list div.pagination { padding:10px; margin-top:5px; }
+body div#page div#body div#content div#content-list ul li div.content-item { padding:10px 10px 0 10px; }
+
+body div#page div#body div#content div#content-list ul li div.content-item div.left-column { float:left; width:75px; }
+body div#page div#body div#content div#content-list ul li div.content-item div.left-column div.veracity { padding-top:10px; }
+body div#page div#body div#content div#content-list ul li div.content-item div.left-column div.veracity p { width:100%; }
+body div#page div#body div#content div#content-list ul li div.content-item div.left-column a.logo img { margin-left:10px; margin-bottom:10px; }
+
+body div#page div#body div#content div#content-list ul li div.content-item div.right-column { float:right; width:530px; }
+
+body div#page div#body div#content div#content-list ul li div.content-item div.right-column div.system-details { display:none; }
+
+body div#page div#body div#content div#content-list ul li div.content-item div.right-column div.languages { padding-bottom:5px; }
+body div#page div#body div#content div#content-list ul li div.content-item div.right-column div.languages div.more { display: none; }
+body div#page div#body div#content div#content-list ul li div.content-item div.right-column div.languages div.language p { margin-bottom:2px; }
+
+body div#page div#body div#content div#content-list ul li div.content-item div.right-column div.tags div.tag-group p { float:left; padding:2px; margin:2px; }
+body div#page div#body div#content div#content-list ul li div.content-item div.right-column div.tags { padding-top:5px; padding-bottom:5px; background-color: #f9f9f9;}
+
+body div#page div#body div#content div#content-list ul li div.content-item div.right-column div.meta { padding-top:5px; padding-bottom:5px; }
+body div#page div#body div#content div#content-list ul li div.content-item div.right-column div.meta p { padding-bottom: 2px;}
+
+body div#page div#body div#right-bar { float:right; width:270px; }
+body div#page div#body div#right-bar div#channel-tree { width:250px; margin:5px auto 5px auto; }
+body div#page div#body div#right-bar div#channel-tree h2 { padding:10px; }
+body div#page div#body div#right-bar div#channel-tree img { position: relative; top:5px; }
+
+body div#page div#body div#right-bar div#nav-container { margin: 5px 10px 0 10px; }
+body div#page div#body div#right-bar div#nav-container div.nav-container { margin-bottom:0; padding:10px;}
+body div#page div#body div#right-bar div#nav-container div.nav-container h4 { padding:5px; }
+body div#page div#body div#right-bar div#nav-container div.nav-container div.nav-inner { padding:10px; }
+body div#page div#body div#right-bar div#nav-container div.nav-container div.nav-inner ul.facets li { width:100%; }
+body div#page div#body div#right-bar div#nav-container div.nav-container div.nav-inner ul.facets li a { width:100%; }
+body div#page div#body div#right-bar div#nav-container div#veracity-slider div#label-container { margin-bottom: 10px; }
+body div#page div#body div#right-bar div#nav-container div#veracity-slider div#label-container p#min { float:left;}
+body div#page div#body div#right-bar div#nav-container div#veracity-slider div#label-container p#max { float:right;}
+
+div.modal div.modal-header { height:106px; }
+div.modal div.modal-header h2 { padding:30px; }
+div.modal div.modal-content { padding:20px; }
+div.modal div.modal-content form label { display: block; margin-bottom: 5px; }
+div.modal div.modal-content form label.error { display: block; margin-top: -12px; margin-bottom: 15px; padding:5px; }
+div.modal div.modal-content form input[type=text] { display:block; width:100%; margin-bottom: 15px; }
+div.modal div.modal-content form input[type=submit] { margin-top: 10px; width:50%; float:right; }
+
+div.modal div.modal-content div#turbines ul#turbine-list li { margin-bottom: 5px; padding:10px;}
+div.modal div.modal-content div#turbines ul#turbine-list li p { margin-bottom:5px;}
+div.modal div.modal-content div#turbines ul#turbine-list li p.name { float:left; width:70%}
+div.modal div.modal-content div#turbines ul#turbine-list li p.more { float:right; width:5%}
+div.modal div.modal-content div#turbines ul#turbine-list li p.active img { margin-bottom:-3px; margin-left:5px; margin-right:10px;  }
+div.modal div.modal-content div#turbines ul#turbine-list li div.config-container p.name { float:left; width:30%; }
+div.modal div.modal-content div#turbines ul#turbine-list li div.config-container input { width:65%; }
+div.modal div.modal-content div#turbines ul#turbine-list li div.config-container { padding: 2px; margin-bottom:10px; }
+div.modal div.modal-content div#turbines ul#turbine-list li div.config-container div.config-property-container { margin:3px 0 3px 0; }
+div.modal div.modal-content div#turbines ul#turbine-list li div.config-container div.config-property-container p.name { margin-top: 4px; }
+
+div.modal div.modal-content div#sources h3 a { display:block; padding:10px; }
+div.modal div.modal-content div#sources form { margin-right:10px; padding:10px; }
+
+div.modal div.modal-content div#themes ul#theme-list li div.theme { padding: 5px; margin-bottom:5px; }
+div.modal div.modal-content div#themes ul#theme-list li div.theme div.info { width: 60%; float: right; }
+div.modal div.modal-content div#themes ul#theme-list li div.theme img { width:150px; height:75px; }
+div.modal div.modal-content div#themes ul#theme-list li div.theme div.action input { width: 100%; }
+
+div#footer p { padding-left: 10px; padding-bottom: 10px; }
+div#footer ul { padding: 10px; }
+div#footer li { display: inline; font: 0.75em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif; }
+
+div.alert { padding:5px; }
