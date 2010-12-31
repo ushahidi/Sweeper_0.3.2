@@ -27,6 +27,29 @@ class Environment implements IInstallStep
                   "minimum requirement of 5.3.0";
         $this->checks[] = $versionCheck;
 
+        //Check that PHP was built --with-mysql and --with-pdo-mysql
+        $optionsCheck->name = "PHP --with-mysql --with-pdo-mysql Check";
+        $optionsCheck->result = true;
+        if (!function_exists('mysql_connect')) {
+          $optionsCheck->text = "php was not built --with-mysql.";
+          $optionsCheck->result = false;
+        }
+        try {
+            new PDO("mysql:host=localhost;dbname=mysql");
+        } catch (\Exception $e) {
+          if (preg_match("/could not find driver/", $e)) {
+            $error = "php was not built --with-pdo-mysql.";
+            $optionsCheck->text = strlen($optionsCheck->text)
+              ? $optionsCheck->text ." ". $error
+              : $error;
+            $optionsCheck->result = false;
+          }
+        }
+        $optionsCheck->text = strlen($optionsCheck->text)
+          ? $optionsCheck->text
+          : "PHP was built --with-mysql and --with-pdo-mysql";
+        $this->checks[] = $optionsCheck;
+
         //Check that PEAR is installed
         $pearIsThere = include_once("PEAR.php");
         $pearCheck->name = "PHP PEAR";
