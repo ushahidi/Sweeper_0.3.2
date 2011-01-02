@@ -97,7 +97,6 @@ class UshahidiAPIEventHandler implements \Swiftriver\Core\EventDistribution\IEve
 
         //extract the Url for Ushahidi
         $uri = (string) $config["Ushahidi Url"]->value;
-        $uri = rtrim($uri, "/")."/api";
 
         //null check the uri
         if($uri == null || $uri == "") {
@@ -105,6 +104,8 @@ class UshahidiAPIEventHandler implements \Swiftriver\Core\EventDistribution\IEve
             $logger->log("Swiftriver::EventHandlers::UshahidiAPIEventHandler::HandleEvent [Method finished]", \PEAR_LOG_DEBUG);
             return;
         }
+
+        $uri = rtrim($uri, "/")."/api";
 
         //Instanciate the parser that will be used to parse the content item into Ushahidi format
         $toUshahidiParser = new \Swiftriver\UshahidiAPIInterface\ContentToUshahidiAPIParser();
