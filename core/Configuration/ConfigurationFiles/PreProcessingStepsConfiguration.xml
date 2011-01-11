@@ -1,2 +1,0 @@
-<?xml version="1.0"?>
-<configuration><preProcessingSteps><step name="TagThe.Net" className="\Swiftriver\PreProcessingSteps\TagTheNetPreProcessingStep" filePath="\TagTheNetInterface\TagTheNetPreProcessingStep.php"/></preProcessingSteps></configuration>
