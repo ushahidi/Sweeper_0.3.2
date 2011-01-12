@@ -1,6 +1,5 @@
-==============
-SWEEPER v1.0
-==============
+SWEEPER v0.1.0 - v0.2.0 Branch
+==============================
  
 Sweeper is an intelligent media curation tool with filters for managing real-time feeds of information.  You can find out more at - http://swiftly.org
 
