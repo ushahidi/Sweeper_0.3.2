@@ -23,6 +23,15 @@ class FileRewriting implements IInstallStep
             if(!is_writable($filename))
                 throw new Exception("The file $filename is not writable");
 
+            /*
+             * This operating system command is required on Windows only
+             * systems as when you get the code the .htaccess file is
+             * hidden by default which means we can't rewrite it.
+             * mg[at]swiftly.org - 20110112
+             */
+            if(strpos(" " . getenv("OS"), "Windows") != 0)
+                $return = exec("attrib -h $filename");
+
             $htaccessFile = file($filename);
             $handle = fopen($filename, "w");
             foreach($htaccessFile as $lineNumber => $line)
