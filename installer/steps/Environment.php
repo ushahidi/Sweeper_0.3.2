@@ -49,6 +49,21 @@ class Environment implements IInstallStep
                   "included.";
         $this->checks[] = $logCheck;
 
+        //Check that the curl package is installed
+
+
+
+        $curlIsThere = function_exists("curl_version");
+        $curlCheck->name = "PHP cURL";
+        $curlCheck->result = $curlIsThere;
+        $curlCheck->text = $curlIsThere
+                ? "The PHP cURL system is there and I can access it!"
+                : "Sorry, I can't access the PHP cURL, I tried ".
+                  "'include_once(\"curl.php\")' but it returned false. You need ".
+                  "to ensure that the PHP cURL is installed and".
+                  "included.";
+        $this->checks[] = $curlCheck;
+
         //Check that all the steps passed and if not then return false
         foreach($this->checks as $check)
             if(!$check->result)
