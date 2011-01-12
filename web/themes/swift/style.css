@@ -1216,6 +1216,16 @@ button::-moz-focus-inner {
 	width: 248px !important;
 }
 
+#sources .treeview form div.checkbox label {
+        width:150px !important;
+        float:left !important;
+}
+
+#sources .treeview form div.checkbox input {
+        width:20px !important;
+        float:right !important;
+}
+
 #sources .treeview form button {
 	margin-bottom: 10px !important;
 }
