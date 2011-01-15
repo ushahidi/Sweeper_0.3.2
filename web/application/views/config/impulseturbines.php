@@ -15,7 +15,7 @@
                                 <?php $config = $turbine->configurationProperties[$j]; ?>
                                 <div class="config-property-container clearfix">
                                     <p class="name"><a href="javascript:ShowConfigurationDescription('<?php echo($i); ?>_<?php echo($j); ?>')"><?php echo($config->name); ?></a></p>
-                                    <input name="<?php echo($config->name); ?>" type="text" onchange="SaveConfiguration('<?php echo($turbine->name); ?>', '<?php echo($i); ?>')" class="config-property-value <?php echo($config->type); ?>" id="config_<?php echo($i); ?>_<?php echo($j); ?>" value="<?php echo($config->value); ?>"/>
+                                    <input name="<?php echo($config->name); ?>" type="text" onchange="SaveConfiguration('<?php echo($turbine->name); ?>', '<?php echo($i); ?>', 'impulse')" class="config-property-value <?php echo($config->type); ?>" id="config_<?php echo($i); ?>_<?php echo($j); ?>" value="<?php echo($config->value); ?>"/>
                                     <p class="description" style="display:none;" id="config_description_<?php echo($i); ?>_<?php echo($j); ?>"><?php echo($config->description); ?></p>
                                 </div>
                             <?php endfor; ?>
