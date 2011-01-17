@@ -32,7 +32,6 @@ facility.
 
 Once you have done this, you will have all the code required to run and change Sweeper!
 
-
 SYSTEM REQUIREMENTS
 -------------------
 
