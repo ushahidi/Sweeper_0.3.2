@@ -5,8 +5,8 @@ class FileRewriting implements IInstallStep
 
     public function GetDescription()
     {
-        return "Now I need to do some tidying up and make sure that all the URL ".
-               "re-writing is setup so the Kohana framework, can work.";
+        return "Now we need to do some tidying up to make sure that all the URL ".
+		               "re-writing is setup so the Kohana framework can work.";
     }
     public function GetName() 
     {
@@ -106,22 +106,22 @@ class FileRewriting implements IInstallStep
     {
 
         return ($this->passed)
-                 ? "<div class='message'>".
-                    "<p>Thats great, I managed to carry out all the final bits ".
-                    "and pieces that I needed to do to finish off.</p>".
-                    "<p>Lets move on to the final checks.</p>".
-                   "</div>"
-                 : "<div class='message'>".
-                    "<p>Sorry, there seems to have been a few issues with the final ".
-                    "tidy up. Basically, I tried to make changes to the following ".
-                    "files and at least one of them failed. Can you check that I have ".
-                    "permissions to edit them:</p>".
-                    "<ul>".
-                        "<li>[root]/web/.htaccess</li>".
-                        "<li>[root]/web/application/bootstrap.php</li>".
-                        "<li>[root]/index.php</li>".
-                    "</ul>".
-                   "</div>";
+		                 ? "<div class='message'>".
+		                    "<p>Great! We managed to finish up those tasks.".
+		                    "<p>When you click the link below, you'll be taken to the ".
+		                    "Sweeper app where you can start curating content!</p>".
+		                   "</div>"
+		                 : "<div class='message'>".
+		                    "<p>Sorry, there seems to have been a few issues with the final ".
+		                    "steps. We tried to make changes to the following ".
+		                    "files and at least one of them failed. Please ensure that we have ".
+		                    "permissions to edit them:</p>".
+		                    "<ul>".
+		                        "<li>[root]/web/.htaccess</li>".
+		                        "<li>[root]/web/application/bootstrap.php</li>".
+		                        "<li>[root]/index.php</li>".
+		                    "</ul>".
+		                   "</div>";
     }
 }
 ?>

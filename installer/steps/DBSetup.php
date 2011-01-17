@@ -10,10 +10,10 @@ class DBSetup implements IInstallStep {
 
     public function GetDescription() 
     {
-        return "In this step I need to take a few details relating to how I am " .
-               "going to talk to the database. Before you fill in the form here, " .
-               "please make sure you have created an empty database for me on the ".
-               "database server!";
+        return "In this step we need inspect a few details relating to your environment " .
+		               "and checking out the database. Before you fill in the form here, " .
+		               "please make sure you have created an empty database on the ".
+		               "database server.";
     }
     
     public function GetName() 
@@ -64,9 +64,9 @@ class DBSetup implements IInstallStep {
         }
         catch(\Exception $e)
         {
-            $this->errors[] = "There was an issue saving the details to the configuration file ".
-                              "I use. Please ensure you have completed the permissions step of ".
-                              "this installer. If you're interested, the error was:" . $e;
+            $this->errors[] = "There was an issue saving the details to the configuration file. ".
+			                              "Please ensure you have completed the permissions step of ".
+			                              "the installer. In case you're interested, the error was:" . $e;
             return false;
         }
 
@@ -115,9 +115,9 @@ class DBSetup implements IInstallStep {
         }
         catch (\Exception $e)
         {
-            $this->errors[] = "There was an issue saving the details to the configuration file ".
-                              "I use. Please ensure you have completed the permissions step of ".
-                              "this installer. If your interested, the error was:" . $e;
+            $this->errors[] = "There was an issue saving the details to the configuration file. ".
+			                              "Please ensure you have completed the permissions step of ".
+			                              "the installer. In case you're interested, the error was:" . $e;
             return false;
         }
 
@@ -127,8 +127,8 @@ class DBSetup implements IInstallStep {
 
             if(!$link)
             {
-                $this->errors[] = "I tried to connect to the database using the 'mysql_connect' ".
-                                  "function and the details you gave me but it didn't work.";
+                $this->errors[] = "The installer attempted to connect to the database using the 'mysql_connect' ".
+				                                  "function and the details provided, but it didn't work.";
                 return false;
             }
 
@@ -136,9 +136,8 @@ class DBSetup implements IInstallStep {
 
             if(!$dbconnect)
             {
-                $this->errors[] = "I connected to the database server ok but when I tried to ".
-                                  "select the database you told me about, using 'mysql_select_db', ".
-                                  "it didn't work.";
+                $this->errors[] = "The installer connected to the database server ok, but couldn't".
+                                  "connect to the database with the details provided, using 'mysql_select_db.' ";
                 return false;
             }
 
@@ -149,7 +148,7 @@ class DBSetup implements IInstallStep {
         }
         catch(\Exception $e)
         {
-            $this->errors[] = "Something went wrong while I was trying to connect to the database. ".
+            $this->errors[] = "Something went wrong while trying to connect to the database. ".
                               "Here are the details: " . $e;
             return false;
         }
@@ -162,9 +161,9 @@ class DBSetup implements IInstallStep {
         if(!$this->firstTime && count($this->errors) == 0)
         {
             return "<div class='message'>" .
-                    "<p>That's great, all that worked out with no problems</p>".
-                    "<p>Let's move onto the next step.</p>".
-                   "</div>";
+			                    "<p>That's great, no problems so far.</p>".
+			                    "<p>Let's move on to the next step.</p>".
+			                   "</div>";
         }
 
 

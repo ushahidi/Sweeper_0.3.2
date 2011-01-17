@@ -5,7 +5,7 @@ class AllowOverrideChecks implements IInstallStep
 
     public function GetDescription()
     {
-        return "Lets just check that the Kohana URL rewritter can work correctly.";
+        return "Let's ensure that the Kohana URL rewriter will work correctly.";
     }
 
     public function GetName()
@@ -43,11 +43,11 @@ class AllowOverrideChecks implements IInstallStep
                  ? "<div class='message'>".
                     "<p>Excellent, it looks like the Kohana framework is set up ok.</p>".
                     "<p>When you hit the link below, you should be taken to the ".
-                    "sweeper app where you can start adding and curating content</p>".
+                    "Sweeper app where you can start filtering and curating content</p>".
                    "</div>"
                  : "<div class='message'>".
                     "<p>Thats a shame, it seems that there are a few issues with the ".
-                    "way that Kohana wants to do its URLs. The best thing to do is ".
+                    "way that Kohana wants to do it's URLs. The best thing to do is ".
                     "check out <strong><a target='_blank' href='http://kerkness.ca/wiki/doku.php?id=removing_the_index.php'>".
                     "this</a></strong> link and pay attention to the ".
                     "<strong>Troubleshooting #2</strong> section. ".

@@ -10,9 +10,8 @@ class Environment implements IInstallStep
 
     public function GetDescription()
     {
-        return "In this step I will check that you have the required PHP version " .
-               "running on your server and that some of the PHP plugins I need " .
-               "are installed.";
+        return "In this step we will ensure that you have the required PHP version " .
+	               "running on your server and that the PHP plugins needed are installed.";
     }
 
     public function RunChecks($postVar)
@@ -23,8 +22,8 @@ class Environment implements IInstallStep
         $versionCheck->result = $versionIsOk;
         $versionCheck->text = $versionIsOk
                 ? "The PHP version you're running is fine!"
-                : "Sorry, the version of PHP you are running is less than my ".
-                  "minimum requirement of 5.3.0";
+				                : "Sorry, the version of PHP you are running doesn't meet the ".
+				                  "minimum requirement of version 5.3.0";
         $this->checks[] = $versionCheck;
 
         //Check that PEAR is installed
@@ -32,9 +31,9 @@ class Environment implements IInstallStep
         $pearCheck->name = "PHP PEAR";
         $pearCheck->result = $pearIsThere;
         $pearCheck->text = $pearIsThere
-                ? "PHP Pear is installed and I can access it!"
-                : "Sorry, I can't access the PEAR framework, I tried 'include_once(\"PEAR.php\")' ".
-                  "but it returned false. You need to ensure PEAR is installed and included.";
+                ? "PHP Pear is installed!"
+				                : "Sorry, the PEAR framework isn't accessible. The path 'include_once(\"PEAR.php\")' ".
+				                  "was not found. Please ensure that PEAR is installed.";
         $this->checks[] = $pearCheck;
 
         //Check that the pear log package is installed
@@ -42,25 +41,22 @@ class Environment implements IInstallStep
         $logCheck->name = "PHP PEAR Logging";
         $logCheck->result = $logIsThere;
         $logCheck->text = $logIsThere
-                ? "The PHP PEAR Logging system is there and I can access it!"
-                : "Sorry, I can't access the PEAR Logging framework, I tried ".
-                  "'include_once(\"Log.php\")' but it returned false. You need ".
-                  "to ensure that the PEAR Logging system is installed and".
-                  "included.";
+                ? "The PHP PEAR Logging system is installed!"
+				                : "Sorry, we can't find the PEAR Logging framework. The path ".
+				                  "'include_once(\"Log.php\")' was not found. Please ".
+				                  "ensure that the PEAR Logging system is installed.";
         $this->checks[] = $logCheck;
 
         //Check that the curl package is installed
-
-
 
         $curlIsThere = function_exists("curl_version");
         $curlCheck->name = "PHP cURL";
         $curlCheck->result = $curlIsThere;
         $curlCheck->text = $curlIsThere
-                ? "The PHP cURL system is there and I can access it!"
-                : "Sorry, I can't access the PHP cURL, I tried ".
-                  "'include_once(\"curl.php\")' but it returned false. You need ".
-                  "to ensure that the PHP cURL is installed and".
+                ? "The PHP cURL system is there and accessible."
+                : "Sorry, PHP cURL cannot be located. The path".
+                  "'include_once(\"curl.php\")' was not found. Please".
+                  "ensure that PHP cURL is installed and".
                   "included.";
         $this->checks[] = $curlCheck;
 

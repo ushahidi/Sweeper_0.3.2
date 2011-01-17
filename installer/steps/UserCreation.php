@@ -13,8 +13,8 @@ class UserCreation implements IInstallStep
     {
         return "Here you can specify the password for the ".
                "administrative account to use with this ".
-               "instance of Swiftriver. Once you create one ".
-               "here, you can go ahead and create others later.";
+               "deployment of the Sweeper app. Don't worry,".
+               "you can create others later.";
     }
 
     public function RunChecks($postVar)
@@ -25,11 +25,11 @@ class UserCreation implements IInstallStep
             return null;
 
         if(!key_exists("password1", $postVar) || strlen($postVar["password1"]) == 0)
-            $this->errors[] = "You have to enter a password in the first box.";
+            $this->errors[] = "Enter a password into the first box.";
 
 
         if(!key_exists("password2", $postVar) || strlen($postVar["password2"]) == 0)
-            $this->errors[] = "You have to enter a password in the second box.";
+            $this->errors[] = "Enter password into the second box.";
 
         if(count($this->errors) > 0)
             return false;
@@ -68,9 +68,9 @@ class UserCreation implements IInstallStep
         if(!$this->firsttime && count($this->errors) == 0)
             return "<div class='message'>" .
                     "<p>Thats great, all that worked out with no problems.</p>".
-                    "<p>When you have finished installing me, click the login ".
-                    "button and then use the username <strong>'admin'</strong> and the password ".
-                    "you just set!</p>".
+                    "<p>When you've finished installing, click the login ".
+                    "button and then use the username <strong>'admin'</strong> with the password ".
+                    "you've just created.</p>".
                    "</div>";
 
 
@@ -95,7 +95,7 @@ class UserCreation implements IInstallStep
                             "<input type='password' name='password2' />".
                         "</div>".
                         "<div class='form-action'>" .
-                            "<input type='submit' value='Go and set this password!' />".
+                            "<input type='submit' value='Set this password.' />".
                         "</div>".
                        "</form>";
 
