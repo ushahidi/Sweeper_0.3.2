@@ -1,2 +1,2 @@
 <?php ?>
-<p>&copy; 2010 <a href="http://swiftly.org">SwiftRiver v0.5.0</a> released under the <a href="http://fsf.org/">GNU Lesser General Public License.</a></p>
+<p class="footnote">Sweeper v0.2.0 is released under the <a href="http://fsf.org/" title="GNU Lesser">GNU Lesser General Public License.</a> Powered by the <a href="http://swiftly.org" title="Swiftly.org">SwiftRiver platform</a>. <a href="http://wiki.ushahidi.com/doku.php?id=intro" title="SwiftRiver documentation">Documentation</a>. &copy; 2011 <a href="http://ushahidi.com" title="Ushahidi">Ushahidi, Inc LLC</a></p>
