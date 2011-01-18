@@ -1,4 +1,4 @@
-SwiftRiver Sweeper v0.2.0
+SwiftRiver Sweeper v0.3.0
 ==============
  
 Sweeper is an intelligent media curation tool with filters for managing real-time feeds of information.  You can find out more at - http://swiftly.org
@@ -6,6 +6,19 @@ Sweeper is an intelligent media curation tool with filters for managing real-tim
 Find us on Github - [http://github.com/ushahidi/Swiftriver](http://github.com/ushahidi/Swiftriver)
 
 **NOTE**: This is a public beta software release for evaluation and feedback purposes only. Please do NOT use this in critical scenarios without further consultation. Contact jg [at] swiftly.org or mg [at] swiftly.org with additional questions or feedback.
+
+RELEASE NOTES
+-------------
+This is the development branch of Sweeper for the upcoming V0.3 release.
+
+We plan to release Sweeper V0.3 on 28th Feb 2011.
+
+Some of the Jazzy new features you can expect from this upcoming release are:
+
+* Tag based navigation of content
+* Content grouping
+* Dash board
+
 
 DEVELOPER NOTES
 ---------------
