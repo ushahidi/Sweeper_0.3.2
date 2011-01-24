@@ -31,23 +31,6 @@
         <div class="right-column">
             <p class="source"><a href="javascript:Content('<?php echo($content->source->name); ?>', '<?php echo($content->source->type); ?>', '<?php echo($content->source->ratings); ?>', '<?php echo($content->source->score); ?>', '<?php echo($content->source->link); ?>', '<?php echo($content->link); ?>')" class="<?php echo strtolower($content->source->type); ?>" title="View source details"><!--<?php echo strtolower($content->source->name); ?>--></a><!--source--></p>
             <div class="meta">
-                <?php foreach($content->tags as $type => $tags) : ?>
-                    <?php if(is_array($tags) && count($tags) > 0) : ?>
-                        <?php if($type == 'where' && count($tags) > 0) : ?>
-                            <p class="location">
-                                <strong>
-                                    <?php foreach($tags as $key => $tag) : ?>
-                                        <?php if(strlen($tag) > 3) : ?>
-                                            <?php echo ucfirst(strtolower($tag)) . ' '; ?>
-                                        <?php else : ?>
-                                            <?php echo strtoupper($tag) . ' '; ?>
-                                        <?php endif; ?>
-                                    <?php endforeach; ?>
-                                </strong>
-                            </p>
-                        <?php endif; ?>
-                    <?php endif; ?>
-                <?php endforeach; ?>
                 <p class="date"><?php echo(date('D d M Y H:i (P\G\M\T)', $content->date)); ?></p>
             </div>
             <div class="languages">
@@ -75,12 +58,12 @@
             <div class="tags">
                 <?php foreach($content->tags as $type => $tags) : ?>
                     <?php if(is_array($tags) && count($tags) > 0) : ?>
-                        <?php if($type != 'where' && count($tags) > 0) : ?>
+                        <?php if(count($tags) > 0) : ?>
                             <ol class="tag-list"><li><strong><?php echo($type); ?>:</strong></li>
                                 <?php foreach($tags as $key => $tag) : ?>
                                 <li id="<?php echo($content->id); ?>-<?php echo(str_replace(" ", "", strtolower($tag))); ?>">
                                         <a href="JavaScript:RemoveContentTag('<?php echo($content->id); ?>', '<?php echo($type); ?>', '<?php echo($tag); ?>', '<?php echo($content->id); ?>-<?php echo(str_replace(" ", "", strtolower($tag))); ?>');" title="Remove this tag">x</a>
-                                        <?php echo strtolower($tag); ?>
+                                        <a href="JavaScript:listController.AddNavigationTag('<?php echo strtolower($tag); ?>')"><?php echo strtolower($tag); ?></a>
                                     </li>
                                 <?php endforeach; ?>
                             </ol>

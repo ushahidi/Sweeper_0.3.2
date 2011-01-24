@@ -83,18 +83,25 @@ Kohana::modules(array(
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
  * defaults for the URI.
  */
-Route::set('api-contentselection-get', 'api/contentselection/get/<state>/<minVeracity>/<maxVeracity>/<type>/<subType>/<source>/<pageSize>/<pageStart>/<orderBy>')
+/*Route::set('api-contentselection-get', 'api/contentselection/get/<state>/<minVeracity>/<maxVeracity>/<type>/<subType>/<source>/<pageSize>/<pageStart>/<orderBy>')
         ->defaults(array(
             'directory' => 'api',
             'controller' => 'contentselection',
             'action' => 'get',
         ));
-
+*/
 Route::set('api-contentcuration', 'api/contentcuration/<action>(/<id>)')
         ->defaults(array(
             'directory' => 'api',
             'controller' => 'contentcuration',
             'action' => 'markasaccurate',
+        ));
+
+Route::set('api-contentselection', 'api/contentselection')
+        ->defaults(array(
+            'directory' => 'api',
+            'controller' => 'contentselection',
+            'action' => 'index',
         ));
 
 Route::set('api-sources', 'api/channels(/<action>(/<id>))')

@@ -297,6 +297,39 @@ body {
 	border-radius: 0 !important;
 }
 
+#top-tags-container {
+    color: #F0F0F0;
+    vertical-align: top;
+}
+
+#top-tags-container a {
+    color: #f0f0f0;
+    text-decoration:none;
+}
+
+#top-tags-container a:hover {
+    text-decoration:undeline;
+}
+
+#breadcrumbs {
+    color: #f0f0f0;
+}
+
+#breadcrumbs h3 {
+    display: inline;
+}
+#breadcrumbs ul {
+    display:inline;
+}
+
+#breadcrumbs li {
+    display:inline;
+}
+
+#breadcrumbs li a {
+    text-decoration:none;
+}
+
 #label-container {
 	width: 271px !important;
 	padding: 0 0 5px 15px !important;
