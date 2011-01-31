@@ -178,7 +178,7 @@ function ListController(baseUrl, subject, navContainer) {
                     var tagsToShow = new Array();
                     var limit = (potentialTags.length < 5)
                         ? potentialTags.length
-                        : 5;
+                        : 3;
 
                     var html = "<h3>Top Tags</h3><ul id='top-tags'>"
 

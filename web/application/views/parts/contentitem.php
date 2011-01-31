@@ -47,14 +47,15 @@
                         <h2 class="title">
                             <?php echo($title); ?>
                         </h2>
+						<!-- Redundant text display commented out, jg ->
                         <?php if(isset($content->text[$i]->text)) : ?>
                             <?php foreach($content->text[$i]->text as $text) : ?>
                                 <p class="text"><?php echo($text); ?></p>
                             <?php endforeach; ?>
                         <?php endif; ?>
-                    </div>
+						 -->
                 <?php endfor; ?>
-            </div>
+            </div
             <div class="tags">
                 <?php foreach($content->tags as $type => $tags) : ?>
                     <?php if(is_array($tags) && count($tags) > 0) : ?>
@@ -71,6 +72,16 @@
                     <?php endif; ?>
                 <?php endforeach; ?>
             </div>
+			<div class="tags">
+				<ol class="tag-list">
+				<li><a href="#">50%</a></li>
+				<li><a href="#">50%</a></li>
+				<li><a href="#">50%</a></li>
+				<li><a href="#">50%</a></li>
+				<li><a href="#">50%</a></li>
+				</ol>
+			</div>
+        </div>
         </div>
     </div>
 </div>

@@ -1338,5 +1338,25 @@ button::-moz-focus-inner {
 	font-weight: normal !important;
 	letter-spacing: -0.02em;
 	line-height: 120% !important;
-        margin-left: 100px !important;
+    margin-left: 100px !important;
+}
+
+.icn_twitter {
+	background: url('media/images/icn-twitter.png') no-repeat !important;	
+}
+
+.icn_text {
+	background: url('media/images/icn-text.png') !important;
+}
+
+.icn_video {
+	background: url('media/images/icn-video.png') !important;	
+}
+
+.icn_email {	
+	background: url('media/images/icn-email.png') !important;
+}
+
+.icn_sms {	
+	background: url('media/images/icn-sms.png') !important;
 }
