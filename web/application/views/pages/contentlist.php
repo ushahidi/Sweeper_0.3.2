@@ -1,6 +1,7 @@
 <?php ?>
 <script type="text/javascript" language="javascript">
-    var nav_state = '<?php echo(isset($_SESSION["nav_state"]) ? $_SESSION["nav_state"] : $state); ?>'; <!-- changed -->
+    var nav_state = '<?php echo(isset($_SESSION["nav_state"]) ? $_SESSION["nav_state"] : $state); ?>'; 
+    var nav_time = '<?php echo(isset($_SESSION["nav_time"]) ? $_SESSION["nav_time"] : \time()); ?>';
     var nav_minVeracity = <?php echo(isset($_SESSION["nav_minVeracity"]) ? $_SESSION["nav_minVeracity"] : "0"); ?>;
     var nav_maxVeracity = <?php echo(isset($_SESSION["nav_maxVeracity"]) ? $_SESSION["nav_maxVeracity"] : "100"); ?>;
     var nav_type = '<?php echo(isset($_SESSION["nav_type"]) ? $_SESSION["nav_type"] : "null"); ?>';
@@ -15,7 +16,7 @@
     $(document).ready(function(){
         setInterval("Update()", 10000);
         listController = new ListController(nav_baseUrl, "div#content-list ul", "div#nav-container");
-        listController.NavigationStateChange(new NavigationState(nav_state, nav_minVeracity, nav_maxVeracity, nav_type, nav_subType, nav_source, nav_pageSize, nav_pageStart, nav_orderBy, nav_tags));
+        listController.NavigationStateChange(new NavigationState(nav_state, nav_time, nav_minVeracity, nav_maxVeracity, nav_type, nav_subType, nav_source, nav_pageSize, nav_pageStart, nav_orderBy, nav_tags));
         $("#more_content a").attr("href", "javascript:MoreContent("+ nav_pageSize +")");
     });
 </script>

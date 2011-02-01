@@ -9,7 +9,7 @@ class Controller_Api_ContentSelection extends Controller
 
         $strings = array ("state", "type", "subType", "source", "orderBy");
 
-        $ints = array ("minVeracity", "maxVeracity", "pageSize", "pageStart");
+        $ints = array ("minVeracity", "maxVeracity", "pageSize", "pageStart", "time");
         
         $params = array();
 

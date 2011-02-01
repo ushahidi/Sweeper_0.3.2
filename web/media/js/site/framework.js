@@ -76,6 +76,7 @@ function ListController(baseUrl, subject, navContainer) {
             uri,
             {
                 state : this.navigationState.state,
+                time : this.navigationState.time,
                 minVeracity : this.navigationState.minVeracity,
                 maxVeracity : this.navigationState.maxVeracity,
                 type : this.navigationState.type,
@@ -406,8 +407,9 @@ function ListController(baseUrl, subject, navContainer) {
     return true;
 }
 
-function NavigationState(state, minVeracity, maxVeracity, type, subType, source, pageSize, pageStart, orderBy, tags) {
+function NavigationState(state, time, minVeracity, maxVeracity, type, subType, source, pageSize, pageStart, orderBy, tags) {
     this.state = state;
+    this.time = time;
     this.minVeracity = minVeracity;
     this.maxVeracity = maxVeracity;
     this.type = type;
@@ -420,6 +422,7 @@ function NavigationState(state, minVeracity, maxVeracity, type, subType, source,
 
     this.Equals = function(navigationState) {
         if(navigationState.state != this.state)                 return false;
+        if(navigationState.time != this.time)                   return false;
         if(navigationState.minVeracity != this.minVeracity)     return false;
         if(navigationState.type != this.type)                   return false;
         if(navigationState.subType != this.subType)             return false;
@@ -434,6 +437,7 @@ function NavigationState(state, minVeracity, maxVeracity, type, subType, source,
     this.Copy = function() {
         return new NavigationState(
             this.state,
+            this.time,
             this.minVeracity,
             this.maxVeracity,
             this.type,
