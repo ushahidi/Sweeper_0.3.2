@@ -54,11 +54,12 @@
                 <?php foreach($content->tags as $type => $tags) : ?>
                     <?php if(is_array($tags) && count($tags) > 0) : ?>
                         <?php if(count($tags) > 0) : ?>
-                            <ol class="tag-list"><li><strong><?php echo($type); ?>:</strong></li>
+                            <ol class="tag-list">
+                                <!--<li><strong><?php echo($type); ?>:</strong></li>-->
                                 <?php foreach($tags as $key => $tag) : ?>
-                                <li id="<?php echo($content->id); ?>-<?php echo(str_replace(" ", "", strtolower($tag))); ?>">
-                                        <a href="JavaScript:RemoveContentTag('<?php echo($content->id); ?>', '<?php echo($type); ?>', '<?php echo($tag); ?>', '<?php echo($content->id); ?>-<?php echo(str_replace(" ", "", strtolower($tag))); ?>');" title="Remove this tag">x</a>
-                                        <a href="JavaScript:listController.AddNavigationTag('<?php echo strtolower($tag); ?>')"><?php echo strtolower($tag); ?></a>
+                                    <li id="<?php echo($content->id); ?>-<?php echo(str_replace(" ", "", strtolower($tag))); ?>">
+                                        <a class="tag-remove" href="JavaScript:RemoveContentTag('<?php echo($content->id); ?>', '<?php echo($type); ?>', '<?php echo($tag); ?>', '<?php echo($content->id); ?>-<?php echo(str_replace(" ", "", strtolower($tag))); ?>');" title="Remove this tag"><span>x</span></a>
+                                        <a class="tag-select" href="JavaScript:listController.AddNavigationTag('<?php echo strtolower($tag); ?>')"><?php echo strtolower($tag); ?></a>
                                     </li>
                                 <?php endforeach; ?>
                             </ol>
@@ -67,11 +68,18 @@
                 <?php endforeach; ?>
             </div>
                 <?php if(property_exists($content, "extensions") ) : ?>
-                    <div class="extensions tags">
+                    <div class="extensions">
                         <?php if(property_exists($content->extensions, "tagClusteringScores")) : ?>
-                            <ol class="clustering tag-list">
+                            <ol class="clustering">
+                                <li class="title">clustering scores:</li>
                                 <?php foreach($content->extensions->tagClusteringScores as $key => $value) : ?>
-                                <li class="<?php echo(strtolower($key)); ?>"><span><?php echo($key); ?></span>&nbsp;<?php echo(round($value * 100)); ?>%</li>
+                                    <li class="<?php echo(strtolower($key)); ?> clearfix">
+                                        <div class="image"></div>
+                                        <div class="text">
+                                            <span><?php echo($key); ?></span>
+                                            &nbsp;<?php echo(round($value * 100)); ?>%
+                                        </div>
+                                    </li>
                                 <?php endforeach; ?>
                             </ol>
                         <?php endif; ?>

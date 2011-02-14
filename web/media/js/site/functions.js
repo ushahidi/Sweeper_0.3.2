@@ -196,6 +196,52 @@ function Update() {
     var url = baseurl.replace("/web", "");
     $.post(url + "core/api/channelservices/runnextchannel.php",{ key : "swiftriver_dev" });
 }
+
+function GetAndShowCurrentCount() {
+    $.post (
+        listController.baseUrl + "api/contentselection",
+        {
+            state : listController.navigationState.state,
+            time : Math.round(new Date().getTime()/1000.0),
+            minVeracity : listController.navigationState.minVeracity,
+            maxVeracity : listController.navigationState.maxVeracity,
+            type : listController.navigationState.type,
+            subType : listController.navigationState.subType,
+            source : listController.navigationState.source,
+            pageSize : listController.navigationState.pageSize,
+            pageStart : listController.navigationState.pageStart,
+            orderBy : listController.navigationState.orderBy,
+            tags : listController.navigationState.tags
+        },
+        function(data)
+        {
+            var newContent = (data.totalcount - listController.results.totalcount);
+            if(newContent < 1)
+                return;
+
+            if($("#newcontent").html() == newContent)
+                return;
+
+            $("#update").slideUp().remove();
+            $('#content').prepend(
+                "<div id='update' style='display:none'><div class='container'><span id='newcontent'>" +
+                newContent +
+                "</span> new pieces of content since you last refreshed &nbsp;" +
+                "<a href='javascript:UpdateListToCurrentTime()'><span>" +
+                "Update the list</span></a>" +
+                "</div></div>");
+            $("#update").slideDown();
+        },
+        "json"
+    );
+}
+
+function UpdateListToCurrentTime()
+{
+    $("#update").remove();
+    listController.UpdateListToCurrentTime();
+}
+
 function ShowAddChannelModal(type, subType) {
     $.get(baseurl + "parts/addchannel/" + type + "/" + subType, function(data) {
         Shadowbox.open({

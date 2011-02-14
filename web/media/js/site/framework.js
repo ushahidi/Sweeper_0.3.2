@@ -31,6 +31,12 @@ function ListController(baseUrl, subject, navContainer) {
      * ongoing ajax requests
      */
     this.currentRequests = new Object();
+
+    /**
+     * Object that contains the results from the call to the
+     * core api.
+     */
+    this.results = new Object();
     
     /**
      * Function for seeting new navigation settings to the List
@@ -59,17 +65,7 @@ function ListController(baseUrl, subject, navContainer) {
      */
     this.RenderList = function(rerenderNavigation) {
         //set the request Url
-        var uri = this.baseUrl +
-                  "api/contentselection";/* +
-                  this.navigationState.state + "/" +
-                  this.navigationState.minVeracity + "/" +
-                  this.navigationState.maxVeracity + "/" +
-                  this.navigationState.type + "/" +
-                  this.navigationState.subType + "/" +
-                  this.navigationState.source + "/" +
-                  this.navigationState.pageSize + "/" +
-                  this.navigationState.pageStart + "/" +
-                  this.navigationState.orderBy;*/
+        var uri = this.baseUrl + "api/contentselection";
 
          //get the current array index
          this.currentRequests[uri] = $.post(
@@ -89,6 +85,8 @@ function ListController(baseUrl, subject, navContainer) {
             },
             function(data)
             {
+                listController.results = data;
+
                 if(rerenderNavigation)
                     listController.RenderNavigation(data.navigation);
 
@@ -169,49 +167,56 @@ function ListController(baseUrl, subject, navContainer) {
                     }
                 });
 
-                if(navigationTree.Tags != null && navigationTree.Tags.facets.length > 0)
+                if(listController.navigationState.tags != null && listController.navigationState.tags != "null" && listController.navigationState.tags.length != " ")
                 {
-                    var potentialTags = new Array();
-                    for(var x = 0; x < navigationTree.Tags.facets.length; x++)
-                        if(listController.navigationState.tags.indexOf(navigationTree.Tags.facets[x].name) == -1)
-                            potentialTags[potentialTags.length] = navigationTree.Tags.facets[x];
-
-                    var tagsToShow = new Array();
-                    var limit = (potentialTags.length < 5)
-                        ? potentialTags.length
-                        : 3;
-
-                    var html = "<h3>Top Tags</h3><ul id='top-tags'>"
-
-                    for(var i = 0; i < limit; i++)
-                    {
-                        html += "<li><a href='javascript:listController.AddNavigationTag(\"" + potentialTags[i].id + "\")'>"+ potentialTags[i].name +  " (" + potentialTags[i].count + ")</a></li>";
-                    }
-
-                    html += "</ul>"
-
-                    $(listController.navContainer + " #top-tags-container").children().remove();
-                    $(listController.navContainer + " #top-tags-container").append(html);
-                }
-
-                if(listController.navigationState.tags != null && listController.navigationState.tags != "null")
-                {
-                    $(listController.navContainer + " #breadcrumbs").children().remove();
-                    $(listController.navContainer + " #breadcrumbs").append("<h3>Selected Tags:&nbsp;</h3><ul />");
+                    $(listController.navContainer + " #selected-tags-container").children().remove();
+                    $(listController.navContainer + " #selected-tags-container").append("<ul />");
                     var tags = listController.navigationState.tags.split("|");
                     for(var j = 0; j < tags.length; j++)
                     {
                         if(tags[j] == "")
                             continue;
 
-                        $(listController.navContainer + " #breadcrumbs ul").append
+                        $(listController.navContainer + " #selected-tags-container ul").append
                             (
-                                "<li>" + tags[j] + " <a href='javascript:listController.RemoveNavigationTag(\"" + tags[j] + "\")'>x</a></li>"
+                                "<li><a href='javascript:listController.RemoveNavigationTag(\"" + tags[j] + "\")'>x</a><span>" + tags[j] + "</span></li>"
                             )
                     }
-                    if($(listController.navContainer + " #breadcrumbs ul").children().length < 1)
-                        $(listController.navContainer + " #breadcrumbs").children().remove();
+                }
+                else
+                {
+                    $(listController.navContainer + " #selected-tags-container").children().remove();
+                    $(listController.navContainer + " #selected-tags-container").append("<h2>No tags selected</h2><p>you can click on a tag to see content that shares that tag</p>");
+                }
 
+                if(navigationTree.Channels != null && navigationTree.Channels.facets != null)
+                {
+                    $(listController.navContainer + " #selected-channels-container").children().remove();
+                    
+                    if(navigationTree.Channels.selected)
+                    {
+                        $(listController.navContainer + " #selected-channels-container").append("<ul>");
+                        $(listController.navContainer + " #selected-channels-container ul").append
+                            (
+                                "<li><a class='deselect' href=\"javascript:listController.DeselectFacet('type')\">x</a><span>" +
+                                navigationTree.Channels.facets[0].name +
+                                "</span></li>"
+                            );
+                    }
+                    else
+                    {
+                        $(listController.navContainer + " #selected-channels-container").append("<ul />");
+
+                        for(var x = 0; x < navigationTree.Channels.facets.length; x++)
+                        {
+                            $(listController.navContainer + " #selected-channels-container ul").append
+                            (
+                                "<li class='unselected'><a href='javascript:listController.SelectFacet(\"type\", \"" +
+                                navigationTree.Channels.facets[x].id + 
+                                "\")'><span>" + navigationTree.Channels.facets[x].name + "</span></a></li>"
+                            );
+                        }
+                    }
                 }
             }
         )
@@ -396,6 +401,19 @@ function ListController(baseUrl, subject, navContainer) {
 
             newNavigationState.tags = newNavigationState.tags.replace("|" + tag, "");
         }
+
+        listController.NavigationStateChange(newNavigationState);
+    }
+
+    /**
+     * Function that updates the list view to show content from the
+     * current time.
+     */
+    this.UpdateListToCurrentTime = function()
+    {
+        var newNavigationState = listController.navigationState.Copy();
+
+        newNavigationState.time = Math.round(new Date().getTime()/1000.0);
 
         listController.NavigationStateChange(newNavigationState);
     }

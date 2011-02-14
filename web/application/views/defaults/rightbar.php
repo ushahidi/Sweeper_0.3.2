@@ -2,14 +2,18 @@
 <h2>Filters:</h2>
 <div id="nav-container">
     <table>
+        <thead>
+            <th>Source Veracity</th>
+            <th>Channels</th>
+            <th>Tags</th>
+        </thead>
         <tr>
-            <td id="veracity-slider-container" width="350px"></td>
-			<!-- Remove Top Tags from Top Nav
-            <td id="top-tags-container" valign="top"></td>
-			-->
+            <td id="veracity-slider-container" width="300px"></td>
+            <td id="selected-channels-container"></td>
+            <td id="selected-tags-container"></td>
         </tr>
         <tr>
-            <td colspan="2" id="breadcrumbs" class="clearfix"></td>
+            <td colspan="3" id="breadcrumbs" class="clearfix"></td>
         </tr>
     </table>
 </div>

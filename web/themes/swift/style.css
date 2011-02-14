@@ -297,38 +297,98 @@ body {
 	border-radius: 0 !important;
 }
 
-#top-tags-container {
-    color: #F0F0F0;
-    vertical-align: top;
+#nav-container table th {
+    color: #FFF;
+    padding: 0 50px 10px 0 !important;
 }
 
-#top-tags-container a {
-    color: #f0f0f0;
+#nav-container table td {
+    color: #FFF;
+    padding-right:50px !important;
+}
+
+#selected-tags-container {
+    vertical-align:top;
+    width:250px;
+}
+#selected-tags-container h2 {
+    display:block !important;
+    float:none !important;
+    width:100% !important;
+    text-align:center !important;
+    margin-bottom:5px !important;
+}
+
+#selected-tags-container p {
+    color:#AAA;
+    font-size:70% !important;
+}
+
+#selected-tags-container li {
+    float:left;
+    margin-right:5px;
+}
+
+#selected-tags-container li a {
+    padding: 5px 5px 8px 15px !important;
+    background: url("media/images/buttons.png") no-repeat scroll -450px -270px transparent !important;
+    color: #F0F0F0 !important;
+    font-size: 80% !important;
+    display: inline-block !important;
+    text-decoration: none;
+}
+
+#selected-tags-container li a:hover {
+    text-decoration:underline;
+}
+
+#selected-tags-container li span {
+    padding: 5px 10px 8px !important;
+    background: url("media/images/buttons.png") no-repeat scroll right -371px transparent !important;
+    color: #F0F0F0 !important;
+    font-size: 80% !important;
+    display: inline-block !important;
+    margin-left:-5px !important;
+    text-decoration:none;
+    width:70px !important;
+}
+
+#selected-channels-container {
+    vertical-align:top;
+    width:200px;
+}
+
+#selected-channels-container li.unselected{
+    background: url("media/images/buttons.png") no-repeat scroll -450px -270px transparent !important;
+    padding: 0 0 0 20px !important;
+    float:left;
+}
+
+
+#selected-channels-container li a.deselect{
+    padding: 5px 5px 8px 15px !important;
+    background: url("media/images/buttons.png") no-repeat scroll -450px -270px transparent !important;
+    color: #F0F0F0 !important;
+    font-size: 80% !important;
+    display: inline-block !important;
+    text-decoration: none;
+}
+
+#selected-channels-container li a:hover {
+    text-decoration:underline;
+}
+
+#selected-channels-container li span {
+    padding: 5px 15px 8px 8px !important;
+    background: url("media/images/buttons.png") no-repeat scroll right -371px transparent !important;
+    color: #F0F0F0 !important;
+    font-size: 80% !important;
+    display: inline-block !important;
+    margin-left:-5px !important;
     text-decoration:none;
 }
 
-#top-tags-container a:hover {
-    text-decoration:undeline;
-}
 
-#breadcrumbs {
-    color: #f0f0f0;
-}
-
-#breadcrumbs h3 {
-    display: inline;
-}
-#breadcrumbs ul {
-    display:inline;
-}
-
-#breadcrumbs li {
-    display:inline;
-}
-
-#breadcrumbs li a {
-    text-decoration:none;
-}
 
 #label-container {
 	width: 271px !important;
@@ -727,6 +787,42 @@ display: none !important;
 	list-style-type: none !important;
 	color: #666 !important;
 	font-size: 70% !important;
+}
+
+#content .tag-list li strong {
+    padding-top: 6px !important;
+    display:inline-block !important;
+}
+
+#content .tag-list li a.tag-remove {
+    padding: 5px 5px 8px 15px !important;
+    background: url("media/images/buttons.png") no-repeat scroll -450px -270px transparent !important;
+    color: #F0F0F0 !important;
+    font-size: 100% !important;
+    display: inline-block !important;
+    text-decoration: none;
+}
+
+#content .tag-list li a.tag-remove:hover {
+    text-decoration:underline;
+}
+
+#content .tag-list li a.tag-select {
+    padding: 5px 10px 8px !important;
+    background: url("media/images/buttons.png") no-repeat scroll right -371px transparent !important;
+    color: #F0F0F0 !important;
+    font-size: 100% !important;
+    display: inline-block !important;
+    margin-left:-5px !important;
+    text-decoration:none;
+}
+
+#content .tag-list li a.tag-select:hover {
+    text-decoration:underline;
+}
+
+.content-item .extensions .clustering li span {
+    display: none;
 }
 
 #content ul li:first .content-item {
@@ -1338,9 +1434,85 @@ button::-moz-focus-inner {
 	font-weight: normal !important;
 	letter-spacing: -0.02em;
 	line-height: 120% !important;
-    margin-left: 100px !important;
+        margin-left: 100px !important;
 }
 
+div#update div.container {
+    background-color: #3c3c3c !important;
+    padding: 20px !important;
+    width: 100% !important;
+    border-bottom: 1px solid #000;
+    text-align: center;
+    color: #FFF;
+}
+
+div#update div.container a {
+    background: url('media/images/buttons.png') 0 -245px no-repeat !important;
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 15px !important;
+}
+
+div#update div.container a:hover {
+    background: url('media/images/buttons.png') -35px -245px no-repeat !important;
+}
+
+div#update div.container a:hover {
+    text-decoration: underline;
+}
+
+div#update div.container a span {
+    display: none;
+}
+
+.content-item .extensions {
+    
+}
+
+#content li ol.clustering {
+    width: 760px !important;
+    list-style-type: none !important;
+    
+}
+
+#content li ol.clustering li {
+    margin-top:20px !important;
+    width: 115px !important;
+    border-bottom: none !important;
+}
+
+#content li ol.clustering li.title {
+    font-size:70% !important;
+    color: #555 !important;
+    font-weight:bold !important;
+    padding: 16px 0 0 0 !important;
+}
+
+#content li ol.clustering li div.image {
+    width:35px !important;
+    float:left !important;
+    padding: 18px 0 18px 0 !important;
+    background: url('media/images/buttons.png') -575px -210px no-repeat !important;
+}
+
+#content li ol.clustering li.twitter div.image {
+    background: url('media/images/buttons.png') -668px -210px no-repeat !important;
+}
+
+#content li ol.clustering li.facebook div.image {
+    background: url('media/images/buttons.png') -715px -210px no-repeat !important;
+}
+
+#content li ol.clustering li.email div.image {
+    background: url('media/images/buttons.png') -808px -210px no-repeat !important;
+}
+
+#content li ol.clustering li div.text {
+    float:right !important;
+    width:70px !important;
+    padding: 15px 0 0 0 !important;
+}
 .icn_twitter {
 	background: url('media/images/icn-twitter.png') no-repeat !important;	
 }
