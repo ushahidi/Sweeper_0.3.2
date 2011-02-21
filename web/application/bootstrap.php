@@ -142,9 +142,9 @@ Route::set('config', "config/<controller>(/<action>)")
 
 Route::set('default', '(<controller>(/<action>(/<state>)))')
 	->defaults(array(
-		'controller' => 'contentlist',
+		'controller' => 'dashboard',
 		'action'     => 'index',
-                'state'      => 'new_content',
+                'state'      => '',
 	));
 
 
