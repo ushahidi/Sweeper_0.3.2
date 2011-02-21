@@ -73,10 +73,10 @@
                             <ol class="clustering">
                                 <li class="title">clustering scores:</li>
                                 <?php foreach($content->extensions->tagClusteringScores as $key => $value) : ?>
-                                    <li class="<?php echo(strtolower($key)); ?> clearfix">
+                                <li class="<?php echo(strtolower(str_replace(' ', '', $key))); ?> clearfix">
                                         <div class="image"></div>
                                         <div class="text">
-                                            <span><?php echo($key); ?></span>
+                                            <span><?php echo($key); ?>:</span>
                                             &nbsp;<?php echo(round($value * 100)); ?>%
                                         </div>
                                     </li>

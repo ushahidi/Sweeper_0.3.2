@@ -90,6 +90,13 @@ Kohana::modules(array(
             'action' => 'get',
         ));
 */
+Route::set('api-analytics', 'api/analytics/<action>(/<id>)')
+        ->defaults(array(
+            'directory' => 'api',
+            'controller' => 'analytics',
+            'action' => 'totalcontentbychannel',
+        ));
+
 Route::set('api-contentcuration', 'api/contentcuration/<action>(/<id>)')
         ->defaults(array(
             'directory' => 'api',

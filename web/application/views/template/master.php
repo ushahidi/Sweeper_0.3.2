@@ -21,15 +21,21 @@
         <?php echo(Html::script("media/js/site/framework.js")); ?>
         <?php echo(Html::script("media/js/site/functions.js")); ?>
         <?php echo(Html::script("media/js/css_browser_selector.js")); ?>
+        <?php echo(Html::script("media/js/jquery.jqplot.js")); ?>
+        <?php echo(Html::script("media/js/excanvas.js")); ?>
+        <?php echo(Html::script("media/js/jqplot.barRenderer.min.js")); ?>
+        <?php echo(Html::script("media/js/jqplot.categoryAxisRenderer.min.js")); ?>
 
         <?php echo(Html::style("media/css/plugins/jquery.ui.css")); ?>
         <?php echo(Html::style("media/css/plugins/jquery.treeview.css")); ?>
+        <?php echo(Html::style("media/css/plugins/jquery.jqplot.css")); ?>
         <?php echo(Html::style("media/css/plugins/shadowbox.css")); ?>
         <?php echo(Html::style("media/css/site/base.css")); ?>
         <?php echo(Html::style("themes/swift/style.css")); ?>
 
         <!--[if IE]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <?php echo(Html::style("media/js/excanvas.js")); ?>
         <![endif]-->
 
         <!--[if lt IE 8]>

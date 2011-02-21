@@ -822,7 +822,7 @@ display: none !important;
 }
 
 .content-item .extensions .clustering li span {
-    display: none;
+    
 }
 
 #content ul li:first .content-item {
@@ -1478,7 +1478,7 @@ div#update div.container a span {
 
 #content li ol.clustering li {
     margin-top:20px !important;
-    width: 115px !important;
+    width: 150px !important;
     border-bottom: none !important;
 }
 
@@ -1508,10 +1508,17 @@ div#update div.container a span {
     background: url('media/images/buttons.png') -808px -210px no-repeat !important;
 }
 
+#content li ol.clustering li.googlenews div.image {
+    background: url('media/images/buttons.png') -765px -174px no-repeat !important;
+}
+
+#content li ol.clustering li.allsources div.image {
+    background: url('media/images/buttons.png') -800px -174px no-repeat !important;
+}
+
 #content li ol.clustering li div.text {
-    float:right !important;
-    width:70px !important;
     padding: 15px 0 0 0 !important;
+    font-size: 70% !important;
 }
 .icn_twitter {
 	background: url('media/images/icn-twitter.png') no-repeat !important;	
@@ -1532,3 +1539,17 @@ div#update div.container a span {
 .icn_sms {	
 	background: url('media/images/icn-sms.png') !important;
 }
+
+div#dashboard { }
+div#dashboard #intro { color:#FFF; margin-bottom:20px !important; }
+div#dashboard #intro h1 { font-size:1.5em !important; text-align: center;  margin-bottom:20px !important; }
+div#dashboard .row { width:950px !important; margin: 0 auto 0 auto !important; }
+div#dashboard .row .right { float:right;}
+div#dashboard .row .left { float:left;}
+div#dashboard .row .column { width:49%; margin:0 !important; padding:0 !important;}
+div#dashboard .chart { font-size: 70% !important; color:#fff !important;}
+div#dashboard .chart .jqplot-yaxis { margin-right:10px !important;}
+div#dashboard .chart .jqplot-xaxis { margin-top:10px !important;}
+div#dashboard .chart .jqplot-yaxis-label { font-size: 120% !important; padding-right:10px !important;}
+div#dashboard .chart .jqplot-xaxis-label { font-size: 120% !important; padding-top:10px !important;}
+div#dashboard .chart .jqplot-title { font-size: 150% !important; padding-bottom:10px !important; font-weight:bold;}
