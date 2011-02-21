@@ -70,18 +70,34 @@
                 <?php if(property_exists($content, "extensions") ) : ?>
                     <div class="extensions">
                         <?php if(property_exists($content->extensions, "tagClusteringScores")) : ?>
-                            <ol class="clustering">
-                                <li class="title">clustering scores:</li>
-                                <?php foreach($content->extensions->tagClusteringScores as $key => $value) : ?>
-                                <li class="<?php echo(strtolower(str_replace(' ', '', $key))); ?> clearfix">
-                                        <div class="image"></div>
-                                        <div class="text">
-                                            <span><?php echo($key); ?>:</span>
-                                            &nbsp;<?php echo(round($value * 100)); ?>%
-                                        </div>
-                                    </li>
-                                <?php endforeach; ?>
-                            </ol>
+                            <?php if(property_exists($content->extensions->tagClusteringScores, "AccurateContent")) : ?>
+                                <ol class="clustering clearfix">
+                                    <li class="title">clustering scores for <strong>accurate</strong> content:</li>
+                                    <?php foreach($content->extensions->tagClusteringScores->AccurateContent as $key => $value) : ?>
+                                    <li class="<?php echo(strtolower(str_replace(' ', '', $key))); ?> clearfix">
+                                            <div class="image"></div>
+                                            <div class="text">
+                                                <span><?php echo($key); ?>:</span>
+                                                &nbsp;<?php echo(round($value * 100)); ?>%
+                                            </div>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ol>
+                            <?php endif; ?>
+                            <?php if(property_exists($content->extensions->tagClusteringScores, "AllContent")) : ?>
+                                <ol class="clustering clearfix">
+                                    <li class="title">clustering scores for <strong>all</strong> content:</li>
+                                    <?php foreach($content->extensions->tagClusteringScores->AllContent as $key => $value) : ?>
+                                    <li class="<?php echo(strtolower(str_replace(' ', '', $key))); ?> clearfix">
+                                            <div class="image"></div>
+                                            <div class="text">
+                                                <span><?php echo($key); ?>:</span>
+                                                &nbsp;<?php echo(round($value * 100)); ?>%
+                                            </div>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ol>
+                            <?php endif; ?>
                         <?php endif; ?>
                     </div>
                 <?php endif; ?>

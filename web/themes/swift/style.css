@@ -1483,10 +1483,12 @@ div#update div.container a span {
 }
 
 #content li ol.clustering li.title {
+    width: 120px !important;
     font-size:70% !important;
     color: #555 !important;
     font-weight:bold !important;
-    padding: 16px 0 0 0 !important;
+    margin-right:20px !important;
+    padding: 8px 0 0 0 !important;
 }
 
 #content li ol.clustering li div.image {
