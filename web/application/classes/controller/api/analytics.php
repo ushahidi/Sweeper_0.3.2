@@ -17,4 +17,12 @@ class Controller_Api_Analytics extends Controller
         //Return the API message
         $this->request->response = $json;
     }
+
+    public function action_accumulatedcontentovertime()
+    {
+        $json = API::analytics_api()->run_analytics_query('{"RequestType":"AccumulatedContentOverTimeAnalyticsProvider"}');
+
+        //Return the API message
+        $this->request->response = $json;
+    }
 }

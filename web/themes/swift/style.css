@@ -1543,9 +1543,9 @@ div#update div.container a span {
 }
 
 div#dashboard { }
-div#dashboard #intro { color:#FFF; margin-bottom:20px !important; }
+div#dashboard #intro { color:#FFF; }
 div#dashboard #intro h1 { font-size:1.5em !important; text-align: center;  margin-bottom:20px !important; }
-div#dashboard .row { width:950px !important; margin: 0 auto 0 auto !important; }
+div#dashboard .row { width:950px !important; margin: 20px auto 0 auto !important; }
 div#dashboard .row .right { float:right;}
 div#dashboard .row .left { float:left;}
 div#dashboard .row .column { width:49%; margin:0 !important; padding:0 !important;}
@@ -1555,3 +1555,4 @@ div#dashboard .chart .jqplot-xaxis { margin-top:10px !important;}
 div#dashboard .chart .jqplot-yaxis-label { font-size: 120% !important; padding-right:10px !important;}
 div#dashboard .chart .jqplot-xaxis-label { font-size: 120% !important; padding-top:10px !important;}
 div#dashboard .chart .jqplot-title { font-size: 150% !important; padding-bottom:10px !important; font-weight:bold;}
+div#dashboard .chart .jqplot-table-legend { color:#333 !important;}
