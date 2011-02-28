@@ -57,7 +57,7 @@ $sucess = $step->RunChecks($_POST);
             </table>
         </div>
         <div id="page">
-            <img id="logo-callout" src="assets/images/logo-callout.png" />
+            <img id="logo-callout" src="assets/images/logo-callout.png" style="position: relative; left: -40px;"/>
             <div id="baloon">
                 <div class="top">&nbsp;</div>
                 <div class="mid">

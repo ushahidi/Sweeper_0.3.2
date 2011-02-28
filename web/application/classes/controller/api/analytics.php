@@ -25,4 +25,12 @@ class Controller_Api_Analytics extends Controller
         //Return the API message
         $this->request->response = $json;
     }
+
+    public function action_totaltagpopularity($limit = 20)
+    {
+        $json = API::analytics_api()->run_analytics_query('{"RequestType":"TotalTagPopularityAnalyticsProvider","Parameters":{"Limit":'.$limit.'}}');
+
+        //Return the API message
+        $this->request->response = $json;
+    }
 }
