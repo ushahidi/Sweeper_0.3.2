@@ -64,7 +64,7 @@ $sucess = $step->RunChecks($_POST);
                     <h2>Step: <?php echo($step->GetName()); ?></h2>
                     <p class="description"><?php echo($step->GetDescription()); ?></p>
                     <?php if($sucess === true) : ?>
-                        <img src="assets/images/sucess-large.png" />
+                        <img src="assets/images/success-large.png" />
                     <?php elseif ($sucess === false) : ?>
                         <img src="assets/images/fail-large.png" />
                     <?php endif; ?>

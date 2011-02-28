@@ -11,7 +11,7 @@ class Environment implements IInstallStep
     public function GetDescription()
     {
         return "In this step we will ensure that you have the required PHP version " .
-	               "running on your server and that the PHP plugins needed are installed.";
+	               "and that the PHP plugins needed are installed.";
     }
 
     public function RunChecks($postVar)

@@ -3,9 +3,8 @@ class Introduction implements IInstallStep
 {
     public function GetDescription()
     {
-        return "Welcome to the installer for SwiftRiver:Sweeper.".
-               "If you haven't already, check out the installation guide".
-               "on wiki.ushahidi.com.<br/> ".
+        return "Welcome to the installer for the SwiftRiver Sweeper application.".
+               " If you haven't already, check out the <a href='http://wiki.ushahidi.com'>installation guide</a>.<br />".
                "<a href='?position=1'><img src='assets/images/button-letsgetstarted.png' /></a>";
     }
 

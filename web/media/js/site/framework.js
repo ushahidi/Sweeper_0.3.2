@@ -186,7 +186,7 @@ function ListController(baseUrl, subject, navContainer) {
                 else
                 {
                     $(listController.navContainer + " #selected-tags-container").children().remove();
-                    $(listController.navContainer + " #selected-tags-container").append("<h2>No tags selected</h2><p>you can click on a tag to see content that shares that tag</p>");
+                    $(listController.navContainer + " #selected-tags-container").append("<p>No tags selected. Click tags below to filter view by selection.</p>");
                 }
 
                 if(navigationTree.Channels != null && navigationTree.Channels.facets != null)

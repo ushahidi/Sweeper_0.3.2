@@ -5,26 +5,24 @@ Sweeper is an intelligent media curation tool with filters for managing real-tim
 
 Find us on Github - [http://github.com/ushahidi/Swiftriver](http://github.com/ushahidi/Swiftriver)
 
-**NOTE**: This is a public beta software release for evaluation and feedback purposes only. Please do NOT use this in critical scenarios without further consultation. Contact jg [at] swiftly.org or mg [at] swiftly.org with additional questions or feedback.
+**NOTE**: This is still a beta software product. We recommend not using it in critical scenarios without further consultation. Contact us at support@swiftly.org with additional questions or feedback.
 
 RELEASE NOTES
 -------------
 This is the development branch of Sweeper for the upcoming V0.3 release.
 
-We plan to release Sweeper V0.3 on 28th Feb 2011.
+Some of the jazzy new features you can expect from this upcoming release are:
 
-Some of the Jazzy new features you can expect from this upcoming release are:
-
-* Tag based navigation of content
+* Tag-based navigation of content
 * Content grouping
-* Dash board
+* Dashboard Analytics
 
 
 DEVELOPER NOTES
 ---------------
 
 If you are a developer interested in contributing to Sweeper then there are a few things to note
-before you jump in and start coding.
+before you jump in and start coding. First be sure to read this overview - http://goo.gl/mlPff
 
 The **master** branch will always be the latest stable release of the app so unless you
 like living life dangerously this is the best place to start:

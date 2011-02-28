@@ -11,7 +11,7 @@ class ReadWriteAccess implements IInstallStep
     public function GetDescription() 
     {
         return "Let's make sure that you have the correct ".
-		       "file permissions for the files needed. ";
+		       "file permissions. ";
     }
 
     public function RunChecks($postVar)
@@ -48,7 +48,7 @@ class ReadWriteAccess implements IInstallStep
                                     is_writable(dirname(__FILE__)."/../../web/modules");
         $directoriesCheck->text = $directoriesCheck->result
                 ? "All the directories have the correct permissions."
-				                : "Thats a shame, one of the following directories are not writable: <br/>".
+				                : "Thats a shame, one of the following directories is not writable: <br/>".
                   "[root]/core/Configuration/ConfigurationFiles<br />".
                   "[root]/core/Modules<br />".
                   "[root]/core/Cache<br />".

@@ -1,7 +1,7 @@
 <div id="dashboard">
     <div id="intro">
-        <h1>Welcome to Sweeper - a Swiftriver app!</h1>
-        <p>In 1972, a crack commando unit was sent to prison by a military court for a crime they didn't commit. They promptly escaped from a maximum security stockade to the Los Angeles underground. Today, still wanted by the government, they survive as soldiers of fortune. If you have a problem, if no-one else can help, and if you can find them, maybe you can hire the A-Team.</p>
+        <h1><i>Welcome to Sweeper, a Swiftly.org application!</i></h1>
+        <p>The mission of the SwiftRiver initiative is to democratize access to the tools used to make sense of realtime data. This app is designed to allow users to <em>sweep</em> through data feeds quickly, using conditional filters and views.</p><br />
     </div>
     <div class="row clearfix">
         <div class="column left">
