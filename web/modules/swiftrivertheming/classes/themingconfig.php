@@ -6,6 +6,6 @@ class ThemingConfig
     public static $password = 'sweeper';
     public static $database = 'sweeper';
 
-    public static $createsql = "CREATE TABLE IF NOT EXISTS theming ( theme VARCHAR(2000) ) TYPE=innodb";
+    public static $createsql = "CREATE TABLE IF NOT EXISTS theming ( theme VARCHAR(2000) ) ENGINE=innodb";
 }
 ?>
