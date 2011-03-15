@@ -10,7 +10,7 @@ body div#page a, td a { text-decoration: none; color: #000; }
 body div#page a:hover { text-decoration: underline; }
 
 body div#head table#steps { width:70%; margin-right: auto; margin-left: auto; border-left:1px solid #AAA; border-right:1px solid #AAA; }
-body div#head table#steps td { font-family:Calibri; font-size:1.1em; text-align:center; border-left:1px solid #AAA; border-right:1px solid #AAA; }
+body div#head table#steps td { font-family:Calibri; font-size:0.8em; text-align:center; border-left:1px solid #AAA; border-right:1px solid #AAA; }
 body div#head table#steps td.selected a { color:#FFF; }
 body div#head table#steps td a { padding-left:5px; padding-right:5px; color:#AAA; }
 body div#head table#steps td a:hover { color:#FFF; }
@@ -34,6 +34,8 @@ div#baloon div.mid form div.form-row { margin-bottom:5px; }
 div#baloon div.mid form div.form-row label { width:100%; font-family:Calibri; font-size:1.1em; }
 div#baloon div.mid form div.form-row input { width:100%; font-family:Calibri; font-size:1.5em; }
 div#baloon div.mid form div.form-action input { width:100%; padding:5px; margin-top:10px; }
+
+.skip { background-color:#09F; border:3px solid #FFF; padding:10px; margin-bottom:10px;}
 
 div#baloon div.mid div.alert { width:80%; margin-right:auto; margin-left:auto; margin-top:10px; margin-bottom: 10px;  background-color:#C90; border:2px solid #600; }
 div#baloon div.mid div.alert ul li { margin-bottom:10px; padding-left:-10px;}

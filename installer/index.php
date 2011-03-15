@@ -23,6 +23,7 @@ $steps = array(
     new ReadWriteAccess(),
     new DBSetup(),
     new UserCreation(),
+    new Proxy(),
     new FileRewriting(),
     new AllowOverrideChecks()
 );

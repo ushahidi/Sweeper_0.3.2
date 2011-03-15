@@ -1,3 +1,3 @@
 <?php
-header("Location: /web/"); 
+header("Location: installer/");
 ?>
