@@ -140,6 +140,9 @@ function SubmitForm(id) {
              $(formId + " input[type=text]").not("[name=name]").each(function(){
                  json += '"'+this.name+'":"'+$(this).val()+'",';
              })
+             $(formId + " input[type=checkbox]").not("[name=name]").each(function(){
+                 json += '"'+this.name+'":"'+$(this).is(':checked')+'",';
+             })
              json = json.substring(0, json.length - 1) + '}}';
              $(formId + " input[type=text]").each(function(){
                 this.value = "";

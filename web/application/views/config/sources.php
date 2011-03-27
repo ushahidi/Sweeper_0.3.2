@@ -30,10 +30,26 @@
                                                 <?php foreach($subType->configurationProperties as $key => $properties) : ?>
                                                     <?php if($subType->type == $key) : ?>
                                                         <?php foreach($properties as $property) : ?>
+                                                            <?php if($property->type == "string") { ?>
                                                             <div class="form-row">
                                                                 <label for="<?php echo(str_replace(" ", "", $property->name)); ?>"><?php echo($property->description); ?></label>
                                                                 <input type="text" name="<?php echo(str_replace(" ", "", $property->name)); ?>" class="required" />
                                                             </div>
+                                                            <?php }
+                                                                else if($property->type == "multi_list") {
+                                                                    $items = explode("|", $property->value);
+                                                                    $current_item = 0;
+                                                                    foreach($items as $item) {
+                                                            ?>
+                                                            <div class="form-row clearfix checkbox">
+                                                                <label for="<?php echo($item); ?>"><?php echo($item); ?></label>
+                                                                <input type="checkbox" name="<?php echo(str_replace(" ", "", $property->name)); ?>_<?php echo($current_item); ?>"/>
+                                                            </div>
+                                                            <?php
+                                                                        $current_item ++;
+                                                                    }
+                                                                }
+                                                            ?>
                                                         <?php endforeach; ?>
                                                     <?php endif; ?>
                                                 <?php endforeach; ?>
