@@ -8,6 +8,6 @@
         <dt>Source veracity:</dt>
             <dd><?php echo($_GET['score'] == "null" ? "Not yet rated" : $_GET['score']); ?></dd>
         <dt>Link:</dt>
-            <dd><?php echo $_GET['contentlink']; ?></dd>
+            <dd><a href="<?php echo $_GET['contentlink']; ?>" target="_blank"><?php echo $_GET['contentlink']; ?></a></dd>
     </dl>
 </div>
