@@ -44,6 +44,22 @@ class Controller_Config_Sources extends Controller_Template_Modal
         $this->template->title = "Content Sources";
         $this->template->content = new View("config/sources");
         $this->template->content->channels = $return;
+
+        $twitterstreamingconfigjson = API::twitterstreaming_api()->get_config();
+        $twitterstreamingconfig = json_decode($twitterstreamingconfigjson);
+        if(isset($twitterstreamingconfig->data))
+        {
+            $this->template->content->TwitterUsername = $twitterstreamingconfig->data->TwitterUsername;
+            $this->template->content->TwitterPassword = $twitterstreamingconfig->data->TwitterPassword;
+            $this->template->content->SearchTerms = implode(' ' , $twitterstreamingconfig->data->SearchTerms);
+        }
+        else
+        {
+            $this->template->content->TwitterUsername = "";
+            $this->template->content->TwitterPassword = "";
+            $this->template->content->SearchTerms = "";
+        }
+
     }
 
     public function action_add()

@@ -13,7 +13,7 @@ function SaveConfiguration(name, number, turbineType) {
     }
     $.post(
         baseurl + "config/" + turbineType + "turbines/save",
-        { "name" : name, "data" : postData },
+        {"name" : name, "data" : postData},
         function(data){},
         'json'
     );
@@ -37,7 +37,7 @@ function ActivateTurbine(number, name, turbineType) {
     $("p#active_" + number).show("fast");
     $.post(
         baseurl + "config/" + turbineType + "turbines/activate",
-        { name: name },
+        {name: name},
         function(data){},
         'json'
     );
@@ -47,7 +47,7 @@ function DeactivateTurbine(number, name, turbineType) {
     $("p#inactive_" + number).show("fast");
     $.post(
         baseurl + "config/" + turbineType + "turbines/deactivate",
-        { name: name },
+        {name: name},
         function(data){},
         'json'
     );
@@ -69,7 +69,7 @@ function ValidateAndTryLogin() {
 
     $.post(
         baseurl + "config/user/login",
-        { "username" : username, "password" : password },
+        {"username" : username, "password" : password},
         function(data) {
             if(data.result) {
                 Shadowbox.close();
@@ -100,7 +100,7 @@ function ValidateAndTryRegister() {
 
     $.post(
         baseurl + "config/user/register",
-        { "username" : username, "password" : password, "role" :role },
+        {"username" : username, "password" : password, "role" :role},
         function(data) {
             Shadowbox.close();
             return;
@@ -149,7 +149,7 @@ function SubmitForm(id) {
              });
              $("#node_" + id + " .hitarea").eq(0).click();
              $.post(baseurl + "api/channels/add",
-                    { channel : json },
+                    {channel : json},
                     function(data) {
                         $.getJSON(baseurl + "api/channels/getall", function(innerData){
                             var channelId = "";
@@ -177,7 +177,7 @@ function ActivateSource(number, id) {
     $("span#active_" + number).css("display", "inline");
     $.post(
         baseurl + "config/sources/activate",
-        { id: id },
+        {id: id},
         function(data){},
         'json'
     );
@@ -187,17 +187,68 @@ function DeactivateSource(number, id) {
     $("span#inactive_" + number).css("display", "inline");
     $.post(
         baseurl + "config/sources/deactivate",
-        { id: id },
+        {id: id},
         function(data){},
         'json'
     );
 }
 
+// TWITTER STREAMING
+function ConfigureTwitterStreaming() {
+    $.get(baseurl + "config/twitterstreaming", function(data) {
+        Shadowbox.open({
+            content : data,
+            player : "html",
+            height : 450,
+            width : 500
+        });
+    });
+}
+function StopTwitterStreaming()
+{
+    $('#deactivate-twitter-streaming').slideUp
+    (
+        function()
+        {
+            $('#activate-twitter-streaming').slideDown();
+        }
+    );
+    $.post(baseurl.replace("/web", "/core") + "api/twitterstreaming/stoptwitterstreaming.php", { key: "swiftriver_dev"});
+}
+
+function StartTwitterStreaming()
+{
+    var username = $('#TwitterUsername').val()
+    var password = $('#TwitterPassword').val()
+    var rawwords = $('#SearchTerms').val().split(" ");
+    var words = [];
+    for(var x = 0; x < rawwords.length; x++)
+    {
+        var candidate = jQuery.trim(rawwords[x])
+        if(candidate != "" && candidate.length > 1)
+            words.push(candidate);
+    }
+
+    var data = {TwitterUsername: username, TwitterPassword: password, SearchTerms: words};
+
+    $('#activate-twitter-streaming').slideUp
+    (
+        function()
+        {
+            $('#deactivate-twitter-streaming').slideDown();
+        }
+    );
+    $.post
+    (
+        baseurl + "api/twitterstreaming/start",
+        { json : data }
+    )
+}
 
 // CONTENT LIST
 function Update() {
     var url = baseurl.replace("/web", "");
-    $.post(url + "core/api/channelservices/runnextchannel.php",{ key : "swiftriver_dev" });
+    $.post(url + "core/api/channelservices/runnextchannel.php",{key : "swiftriver_dev"});
 }
 
 function GetAndShowCurrentCount() {
@@ -383,7 +434,7 @@ function ConfigureFacetGroup() {
 function Rating(type, id) {
     $.get(
         baseurl + "config/rating/rating",
-        { type: type, id: id },
+        {type: type, id: id},
         function(data) {
             Shadowbox.open({
                 content : data,
@@ -397,7 +448,7 @@ function Rating(type, id) {
 function Content(name, type, ratings, score, sourcelink, contentlink) {
     $.get(
         baseurl + "config/content/content",
-        { name: name, type: type, ratings: ratings, score: score, sourcelink: sourcelink, contentlink: contentlink },
+        {name: name, type: type, ratings: ratings, score: score, sourcelink: sourcelink, contentlink: contentlink},
         function(data) {
             Shadowbox.open({
                 content : data,
@@ -413,7 +464,7 @@ function RemoveContentTag(contentId, tagType, tagText, liId)
     $("#"+liId).hide();
     $.post(
         baseurl + "api/contentcuration/removetag/",
-        { contentId: contentId, tagType: tagType, tagText: tagText},
+        {contentId: contentId, tagType: tagType, tagText: tagText},
         function(data){}
     )
 }

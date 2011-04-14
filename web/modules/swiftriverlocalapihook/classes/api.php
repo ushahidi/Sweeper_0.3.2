@@ -30,5 +30,10 @@ class API {
     {
         return new Analytics_API("swiftriver_dev");
     }
+
+    public static function twitterstreaming_api()
+    {
+        return new Twitterstreaming_API("swiftriver_dev");
+    }
 }
 ?>

@@ -118,6 +118,13 @@ Route::set('api-sources', 'api/channels(/<action>(/<id>))')
             'action' => 'listallavailable',
         ));
 
+Route::set('api-twitterstreaming', 'api/twitterstreaming(/<action>(/<id>))')
+        ->defaults(array(
+            'directory' => 'api',
+            'controller' => 'twitterstreaming',
+            'action' => 'getconfig',
+        ));
+
 Route::set('parts-content', "parts/addchannel/<type>/<subtype>")
         ->defaults(array(
             "directory" => "parts",
