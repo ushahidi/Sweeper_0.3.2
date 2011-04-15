@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Sweeper v0.3.0</title>
+        <title>Sweeper v0.3.1</title>
         <link rel="shortcut icon" href="<?php echo url::base(); ?>favicon.ico" />
         <script type="text/javascript" language="javascript">
             var baseurl = "<?php echo(url::base()); ?>";

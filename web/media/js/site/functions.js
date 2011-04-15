@@ -220,6 +220,14 @@ function StartTwitterStreaming()
 {
     var username = $('#TwitterUsername').val()
     var password = $('#TwitterPassword').val()
+    
+    if(password.length < 1)
+    {
+        $('#twitter-password-error').slideDown();
+        return;
+    }
+
+    $('#twitter-password-error').slideUp();
     var rawwords = $('#SearchTerms').val().split(" ");
     var words = [];
     for(var x = 0; x < rawwords.length; x++)
@@ -373,15 +381,27 @@ function ConfigureSources() {
         Shadowbox.open({
             content : data,
             player : "html",
-            height : 450,
+            height : 650,
             width : 500,
             options : {
                 onFinish : function() {
-                    $("div.tree ul").treeview({
-                        animated: "fast",
-                        collapsed: true,
-                        unique: true
-                    });
+                    $.get
+                    (
+                        baseurl + "config/twitterstreaming", function(data)
+                        {
+                            $('#sources div.twitter div.tree ul').prepend
+                            (
+                                "<li>Twitter Streaming Search<ul>" + data + "</ul></li>"
+                            );
+                            $("div.tree ul").treeview
+                            ({
+                                animated: "fast",
+                                collapsed: true,
+                                unique: true
+                            });
+
+                        }
+                    )
                 }
             }
         });

@@ -4,7 +4,7 @@ class Controller_Config_Twitterstreaming extends Controller_Template_Modal
 {
     public function action_index()
     {
-        $this->template->title = "Twitter Streaming";
+        $this->template->title = "";
         $this->template->content = new View("config/twitterstreaming");
 
         $isactive = API::twitterstreaming_api()->get_isactive();

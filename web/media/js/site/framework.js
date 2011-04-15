@@ -209,6 +209,9 @@ function ListController(baseUrl, subject, navContainer) {
 
                         for(var x = 0; x < navigationTree.Channels.facets.length; x++)
                         {
+                            if(navigationTree.Channels.facets[x].name == null || navigationTree.Channels.facets[x].name == "null")
+                                continue;
+
                             $(listController.navContainer + " #selected-channels-container ul").append
                             (
                                 "<li class='unselected'><a href='javascript:listController.SelectFacet(\"type\", \"" +

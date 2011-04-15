@@ -1,41 +1,9 @@
 <div id="sources">
     <div class="icon"></div>
-    <div class="modal-header" style="padding-left:0 !important; margin-top:10px !important;">
-        <h2 style="text-align:left !important; padding-top:10px !important;">Twitter Streaming</h2>
-    </div>
-    <p><a style="cursor:pointer" onclick="$('#twitter-streaming-config').slideDown()">Click here to show options</a></p>
-    <div id="twitter-streaming-config" style="display:none; padding:20px !important;">
-        <p style="font-size:80% !important; margin-left:20px !important; padding:5px !important;">
-            There are some important things to note before you start using the Twitter Stream.<br /><br />
-            1. You are most likely going to get LOTS of content!<br />
-            2. All content from the Twitter Stream will not run through impulse turbines<br />
-            3. It is not a good idea to run Twitter Stream along with other Twitter Searches
-        </p>
-        <p style="font-size:110% !important; margin-left:20px !important; padding:5px !important;">Twitter Username</p>
-        <input type="text" id="TwitterUsername" value="<?php echo $TwitterUsername ?>" />
-        <p style="font-size:110% !important; margin-left:20px !important; padding:5px !important;">Twitter Password</p>
-        <input type="text" id="TwitterPsername" value="<?php echo $TwitterPassword ?>" />
-        <p style="font-size:110% !important; margin-left:20px !important; padding:5px !important;">Search Keywords</p>
-        <p>Seporate multiple keywords with a space</p>
-        <input type="text" id="SearchTerms" value="<?php echo $SearchTerms ?>" />
-        <button class="submit" type="submit" onclick="StartTwitterStreaming()">
-            <span>Start Streaming</span>
-        </button>
-        <button class="submit" type="submit" onclick="StopTwitterStreaming()">
-            <span>Stop Streaming</span>
-        </button>
-
-    </div>
-    <br />
-    <br />
-    <br />
-    <div class="modal-header" style="padding-left:0 !important; border-top:1px solid black !important; margin-top:10px !important;">
-        <h2 style="text-align:left !important; padding-top:10px !important;">Other Sources</h2>
-    </div>
-    <?php $counter = 1; ?>
+   <?php $counter = 1; ?>
     <?php foreach($channels->channelTypes as $channelType) : ?>
         <h3><a href="javascript:ShowChannel('<?php echo($counter); ?>')"><?php echo($channelType->type); ?></a></h3>
-        <div id="channel-type_<?php echo($counter); ?>" class="channel-container" style="display:none">
+        <div id="channel-type_<?php echo($counter); ?>" class="channel-container <?php echo(strtolower(str_replace(" ", "-", $channelType->type))); ?>" style="display:none">
             <div class="tree">
                 <ul>
                     <?php $innerCounter = 1; ?>
