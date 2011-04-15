@@ -1,4 +1,4 @@
-SwiftRiver Sweeper v0.3.0
+SwiftRiver Sweeper v0.3.1
 ==============
  
 Sweeper is an intelligent media curation tool with filters for managing real-time feeds of information.  You can find out more at - http://swiftly.org
