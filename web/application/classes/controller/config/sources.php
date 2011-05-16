@@ -4,9 +4,15 @@ class Controller_Config_Sources extends Controller_Template_Modal
 {
     public function action_index()
     {
+        // Pull channels
         $availableChannelTypesJson = API::channel_api()->list_available_channel_types();
         $availableChannelTypes = json_decode($availableChannelTypesJson);
         $channelTypesArray = $availableChannelTypes->data->channelTypes;
+
+        // Push channels
+        $availablePushChannelTypesJson = API::channel_api()->list_available_push_channel_types();
+        $availablePushChannelTypes = json_decode($availablePushChannelTypesJson);
+        $pushChannelTypesArray = $availablePushChannelTypes->data->channelTypes;
 
         $channelsJson = API::channel_api()->get_all_channels();
         $channels = json_decode($channelsJson);
@@ -14,8 +20,11 @@ class Controller_Config_Sources extends Controller_Template_Modal
         
         $return;
         $return->channelTypes = array();
+        
+        // Pull parsers
         foreach($channelTypesArray as $channelType)
         {
+            $t->parserType = $channelType->parserType;
             $t->type = $channelType->type;
             $t->subTypes = array();
             foreach($channelType->subTypes as $subType)
@@ -41,12 +50,24 @@ class Controller_Config_Sources extends Controller_Template_Modal
             unset($t);
         }
 
+        // Push parsers
+        foreach($pushChannelTypesArray as $channelType)
+        {
+            $t->parserType = $channelType->parserType;
+            $t->type = $channelType->type;
+            $t->description = $channelType->description;
+
+            $return->channelTypes[] = $t;
+            unset($t);
+        }
+
         $this->template->title = "Content Sources";
         $this->template->content = new View("config/sources");
         $this->template->content->channels = $return;
 
         $twitterstreamingconfigjson = API::twitterstreaming_api()->get_config();
         $twitterstreamingconfig = json_decode($twitterstreamingconfigjson);
+
         if(isset($twitterstreamingconfig->data))
         {
             $this->template->content->TwitterUsername = $twitterstreamingconfig->data->TwitterUsername;
@@ -59,7 +80,6 @@ class Controller_Config_Sources extends Controller_Template_Modal
             $this->template->content->TwitterPassword = "";
             $this->template->content->SearchTerms = "";
         }
-
     }
 
     public function action_add()

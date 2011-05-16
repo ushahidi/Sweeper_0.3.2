@@ -69,6 +69,13 @@ class Channels_API {
         return $json;
     }
 
+    public function list_available_push_channel_types()
+    {
+        $workflow = new \Swiftriver\Core\Workflows\ChannelServices\ListAvailablePushChannelTypes();
+        $json = $workflow->RunWorkflow($this->apiKey);
+        return $json;
+    }
+
     public function save_channel($json_encoded_parameters)
     {
         $workflow = new Swiftriver\Core\Workflows\ChannelServices\SaveChannel();
