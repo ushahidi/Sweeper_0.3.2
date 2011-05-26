@@ -88,6 +88,29 @@
             <h3><a href="javascript:ShowChannel('<?php echo($counter); ?>')"><?php echo($channelType->type); ?></a></h3>
             <div id="channel-type_<?php echo($counter); ?>" class="channel-container" style="display:none">
                 <div class="tree"><ul><li><?php echo($channelType->description); ?><li></ul></li></div>
+                <div class="tree">
+                    <ul>
+                        <li>
+                        <?php if(isset($channelType->settings->file_upload)) { ?>
+                            <?php if($channelType->settings->file_upload == true) { ?>
+                                <form id="form_push_<?php echo($counter); ?>">
+                                    <fieldset>
+                                        <div class="form-row">
+                                            <input type="file" name="file_upload_<?php echo($channelType->settings->file_upload_id); ?>" id="file_upload_<?php echo($channelType->settings->file_upload_id); ?>" />
+                                        </div>
+                                        <div class="form-row">
+                                            <button type="submit" onclick="UploadToPushParser('form_push_<?php echo($counter); ?>', '<?php echo($channelType->settings->upload_path); ?>', '<?php echo($channelType->settings->file_upload_id); ?>');" class="submit"><span>Upload</span></button>
+                                        </div>
+                                        <div class="form-row">
+                                            <div id="file_uploading" style="visibility: hidden;">File upload in progress</div>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            <?php } ?>
+                        <?php } ?>
+                        </li>
+                    </ul>
+                </div>
             </div>
         <?php } ?>
         <?php $counter++; ?>

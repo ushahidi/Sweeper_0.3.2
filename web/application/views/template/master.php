@@ -27,6 +27,7 @@
         <?php echo(Html::script("media/js/jqplot.categoryAxisRenderer.min.js")); ?>
         <?php echo(Html::script("media/js/jqplot.dateAxisRenderer.min.js")); ?>
         <?php echo(Html::script("media/js/jqplot.pieRenderer.min.js")); ?>
+        <?php echo(Html::script("media/js/ajaxfileupload.js")); ?>
 
         <?php echo(Html::style("media/css/plugins/jquery.ui.css")); ?>
         <?php echo(Html::style("media/css/plugins/jquery.treeview.css")); ?>

@@ -2,6 +2,27 @@
 
 class Controller_Config_Sources extends Controller_Template_Modal
 {
+    private function get_url() {
+        $pageURL = 'http';
+
+        if(isset($_SERVER["HTTPS"])) {
+            if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
+        }
+
+        $pageURL .= "://";
+
+        if ($_SERVER["SERVER_PORT"] != "80") {
+            $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+        } else {
+            $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+        }
+
+        $pos = strrpos($pageURL, "/web/");
+        $pageURL = rtrim(substr($pageURL, 0, $pos), "/")."/";
+
+        return $pageURL;
+    }
+
     public function action_index()
     {
         // Pull channels
@@ -56,6 +77,11 @@ class Controller_Config_Sources extends Controller_Template_Modal
             $t->parserType = $channelType->parserType;
             $t->type = $channelType->type;
             $t->description = $channelType->description;
+            $t->settings = $channelType->settings;
+
+            if(isset($t->settings->upload_path)) {
+                $t->settings->upload_path = $this->get_url()."core/".$t->settings->upload_path;
+            }
 
             $return->channelTypes[] = $t;
             unset($t);

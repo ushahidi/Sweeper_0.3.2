@@ -172,6 +172,56 @@ function SubmitForm(id) {
         }
     });
 }
+function UploadToPushParser(form_id, url, file_upload_id) {
+    // Do a file upload to the push parser URL
+    var formId = "#" + form_id;
+    $(formId).validate({
+        submitHandler: function(form) {
+            $("#file_uploading")
+                .ajaxStart(function(){
+                    $("#file_uploading").show();
+                })
+                .ajaxComplete(function(){
+                    $("#file_uploading").hide();
+                });
+
+                $.ajaxFileUpload
+                (
+                    {
+                        url:url,
+                        secureuri:false,
+                        fileElementId:"file_upload_" + file_upload_id,
+                        success: function (data, status)
+                        {
+                            if(typeof(data.error) != 'undefined')
+                            {
+                                if(data.error != '')
+                                {
+                                    alert("Data error: " + data.error);
+                                }else
+                                {
+                                    alert(data.msg);
+                                }
+                            }
+                            else {
+                                // Notify of successful upload
+                                alert("Data uploaded successfully");
+                            }
+                        },
+                        error: function (data, status, e)
+                        {
+                            alert("Submit error: " + e);
+                        }
+
+                        // Note that you can also add the following fields:
+                        // dataType: 'json'
+                        // data:{name:'logan', id:'id'}
+                    }
+                )
+            }
+        }
+    );
+}
 function ActivateSource(number, id) {
     $("span#inactive_" + number).css("display", "none");
     $("span#active_" + number).css("display", "inline");
