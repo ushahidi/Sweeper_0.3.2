@@ -1,2 +1,5 @@
+.buildpath
+.project
+.settings
 /web/application/logs
 /web/application/cache
