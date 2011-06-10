@@ -1,4 +1,4 @@
-SwiftRiver Sweeper v0.3.1
+SwiftRiver Sweeper v0.3.2
 ==============
  
 Sweeper is an intelligent media curation tool with filters for managing real-time feeds of information.  You can find out more at - http://swiftly.org
@@ -7,15 +7,18 @@ Find us on Github - [http://github.com/ushahidi/Swiftriver](http://github.com/us
 
 **NOTE**: This is still a beta software product. We recommend not using it in critical scenarios without further consultation. Contact us at support@swiftly.org with additional questions or feedback.
 
+
 RELEASE NOTES
 -------------
-This is the development branch of Sweeper for the upcoming V0.3 release.
+This is the development branch of Sweeper for the upcoming V0.4 release.
 
 Some of the jazzy new features you can expect from this upcoming release are:
 
 * Tag-based navigation of content
 * Content grouping
-* Dashboard Analytics
+* Search
+* Bookmarklet
+* Files
 
 
 DEVELOPER NOTES
@@ -36,8 +39,8 @@ start local development:
     $ git submodule init
     $ git submodule update
 
-Why do we do this? Well, Sweeper is just one app that runs on the [Swiftriver](http://github.com/ushahidi/Swiftriver)
-framework. To allow this to all happen, the framework has its own repository and is brought into
+Why do we do this? Well, Sweeper is just one of many applications that run on the [Swiftriver](http://github.com/ushahidi/Swiftriver)
+core framework. To allow for this, the framework has its own repository and is brought into
 this project using the [**git-submodule**](http://chrisjean.com/2009/04/20/git-submodules-adding-using-removing-and-updating/)
 facility.
 
@@ -54,12 +57,14 @@ SYSTEM REQUIREMENTS
 	
 Further details on this release can be found at - [http://wiki.ushahidi.com](http://wiki.ushahidi.com)
 
+
 SUPPORTED BROWSERS
 ------------------
 * FireFox
 * Safari
 * IE7+
 * Chrome
+
 
 DOCUMENTATION
 -------------
