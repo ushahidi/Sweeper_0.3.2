@@ -66,6 +66,12 @@ SUPPORTED BROWSERS
 * Chrome
 
 
+STANDALONE DEBIAN 6.0 DEPLOYMENT
+--------------------------------
+
+`wget -qO- --no-check-certificate https://raw.github.com/ushahidi/Sweeper/master/deploy/debian.sh | sudo bash`
+
+
 DOCUMENTATION
 -------------
 
