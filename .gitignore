@@ -1,5 +1,6 @@
 .buildpath
 .project
 .settings
+.DS_Store
 /web/application/logs
 /web/application/cache
