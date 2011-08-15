@@ -69,7 +69,14 @@ SUPPORTED BROWSERS
 STANDALONE DEBIAN 6.0 DEPLOYMENT
 --------------------------------
 
+# Run the following command (it should be safe to leave the password to the MySQL root user account blank when prompted): 
 `wget -qO- --no-check-certificate https://raw.github.com/ushahidi/Sweeper/master/deploy/debian.sh | sudo bash`
+# Open `http://your.ip.address/` in your browser.
+# Run through the installation procedure. For your database, use the following details:
+#* Server: `localhost`
+#* Username: `sweeper`
+#* Password: `sweeper`
+#* Database: `sweeper`
 
 
 DOCUMENTATION
