@@ -50,7 +50,7 @@ Once you have done this, you will have all the code required to run and change S
 SYSTEM REQUIREMENTS
 -------------------
 
-* Apache 1.3 or greater
+* Apache 2.x or greater
 * PHP 5.3 or higher
 * PHP Pear Extensions
 * MySQL 4.0 or higher
