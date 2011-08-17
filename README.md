@@ -85,3 +85,14 @@ DOCUMENTATION
 Documentation - [http://wiki.ushahidi.com](http://wiki.ushahidi.com)
 
 Installation - [http://wiki.ushahidi.com/doku.php?id=install_s](http://wiki.ushahidi.com/doku.php?id=install_s)
+
+SUPPORT
+-------
+
+* [SwiftRiver Mailing List](http://groups.google.com/group/swiftriver)
+* [#ushahidi on Freenode](http://irc.lc/freenode/ushahidi)
+
+SEE ALSO
+--------
+
+* [Ushahidi](http://ushahidi.com/)
