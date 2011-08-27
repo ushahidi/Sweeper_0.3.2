@@ -1,4 +1,4 @@
-s#!/bin/bash
+#!/bin/bash
 
 # Perform Debian updates.
 apt-get update
