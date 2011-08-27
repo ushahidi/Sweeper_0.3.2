@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Stop whiptail from prompting for user input during unattended deployment.
+export DEBIAN_FRONTEND=noninteractive
+
 # Perform Debian updates.
 apt-get update
 apt-get upgrade -q -y
