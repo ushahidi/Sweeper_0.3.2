@@ -1,11 +1,11 @@
-#!/bin/bash
+s#!/bin/bash
 
 # Perform Debian updates.
 apt-get update
-apt-get upgrade -yq
+apt-get upgrade -q -y
 
 # Install necessary Debian packages.
-apt-get install -yq apache2 mysql-server php5 php5-curl php5-mysql php-pear git-core
+apt-get install -q -y apache2 mysql-server php5 php5-curl php5-mysql php-pear git-core
 
 # Enable Apache mod_rewrite.
 a2enmod rewrite
