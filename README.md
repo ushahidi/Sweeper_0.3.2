@@ -1,5 +1,6 @@
-SwiftRiver Sweeper v0.3.2
+SwiftRiver Sweeper v0.3.2 [DEPRECATED]
 ==============
+**** THIS VERSION OF SWEEPER HAS BEEN DEPRECATED ****
  
 Sweeper is an intelligent media curation tool with filters for managing real-time feeds of information.  You can find out more at - http://swiftly.org
 
